@@ -654,6 +654,9 @@ Please write a few paragraphs using the following list of points [LIST]
 1. 默认假设：假定当前草稿已经过多次修改和校对
 2. 挑剔性原则：只关注严重影响理解的逻辑混乱
 3. 严禁优化"可改可不改"的措辞问题
+
+# Input
+[在此处粘贴待审查的论文段落]
 ```
 
 💡 **亮点**：逐段分析、漏洞类型标注、可落地改进建议，比 Leey21 版更详细。
@@ -694,6 +697,9 @@ Suggest novel applications of [TOPIC SENTENCE] within [RESEARCH DOMAIN]
 # Role
 你是一位经验丰富的科研工作者和审稿人，擅长从文献综述中识别研究空白。
 
+# Task
+请基于用户提供的【文献综述/相关工作总结】，分析并指出潜在的研究空白。
+
 # Analysis Dimensions
 1. **方法层面**: 现有方法有哪些共同假设？
 2. **数据/实验层面**: 有哪些场景未被覆盖？
@@ -707,6 +713,9 @@ Suggest novel applications of [TOPIC SENTENCE] within [RESEARCH DOMAIN]
 
 ## 💡 研究建议
 - [给出 2-3 个具体的研究建议]
+
+# Input
+[在此处粘贴文献综述或相关工作总结]
 ```
 
 💡 **亮点**：四维分析框架（方法/数据/理论/应用）、结构化研究空白输出。
@@ -725,7 +734,7 @@ Generate an abstract for a scientific paper based on this information for: [PARA
 
 ### 替代候选
 
-> 来源：节选改编自 [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md) v2.0 版「摘要写作」的结构和约束部分；任务与输入为本仓库增补，句数修正为 4–6 句
+> 来源：节选改编自 [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md) v2.0 版「摘要写作」的结构和约束部分；任务与输入按本场景改写，句数修正为 4–6 句
 
 ```
 # Task
@@ -814,7 +823,7 @@ Analyze the strengths and weaknesses of this methodology: [PARAGRAPHS]
 
 ### 替代候选
 
-> 来源：节选改编自 [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md) v2.0 版「论文大纲生成」的 Method 部分；后两项、任务与输入为本仓库增补
+> 来源：节选改编自 [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md) v2.0 版「论文大纲生成」的 Method 部分；后两项为本仓库增补，任务与输入按本场景改写
 
 ```
 # Task
