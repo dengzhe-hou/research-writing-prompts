@@ -1,12 +1,20 @@
-<p align="center">
-  <img src="docs/banner_en.svg" alt="Prompts for Papers" width="100%">
-</p>
+<h1 align="center"><p>Prompts for Papers</p></h1>
+<h3 align="center"><p>A ready-to-copy prompt for each of 22 paper-writing tasks</p></h3>
 
 <p align="center"><a href="README.md">中文</a> | English</p>
 
-Ready-made prompts for 22 common paper-writing tasks. Open a task below, copy the prompt, paste it into any LLM, and replace the bracketed input with your text.
+From translation, polishing and removing AI-style wording to abstracts, experiment analysis, figure captions and responses to reviewers, each of 22 common paper-writing tasks has one primary prompt below. Open a task and copy it.
 
-There are 41 candidate templates, with alternatives for most scenarios; see the [full catalog](CATALOG_EN.md) for all entries and source notes. The count is by candidate group; some groups contain several short prompts to choose from.
+The prompts are plain text and work with any model, including ChatGPT, Claude, Gemini, DeepSeek and Kimi. Most are collected from public projects, and every entry names its source.
+
+> [!TIP]
+> The [full catalog](CATALOG_EN.md) has all 41 candidate templates, including alternatives for most scenarios and each entry's source and license. Where a candidate holds several short prompts, pick the one you need.
+
+## How to use them
+
+1. Find your task below, open it and copy the prompt with the button at the top right of the code block.
+2. Paste it into a chat with any LLM and replace the bracketed placeholder (such as `[在此处粘贴你的中文草稿]`, "paste your Chinese draft here") with your text.
+3. Models can invent numbers and references, so check every number and citation in the output.
 
 Most prompts are written in Chinese. Models follow them fine; add "Reply in English" at the end for English output, and delete the Chinese translation or change-log lines that some prompts (1.1, 2.1, 2.3, 3.1, 3.2, 5.1) ask for.
 
@@ -806,19 +814,18 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 ## Before you use them
 
-- Models can invent numbers and references. Check every number and citation in the output.
 - Many prompts cast the model as a computer-science reviewer or editor; for other fields, change the opening Role. 1.1 also requires the present tense throughout, which psychology and neuroscience papers usually do not follow.
 
 ## Using Claude Code, Codex or Cursor?
 
 For multi-step work such as literature reviews, drafting a whole paper or rebuttals, install the skills from these projects:
 
-- [nature-skills](https://github.com/Yuan1z0825/nature-skills): 19 skills for Nature-style polishing, writing, figures, peer review, responses to reviewers and more
+- [nature-skills](https://github.com/Yuan1z0825/nature-skills): skills for Nature-style polishing, writing, figures, peer review, responses to reviewers and more
 - [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep): a full set of skills from idea discovery and literature review to paper writing, review and rebuttal, aimed at machine-learning research
 - [humanizer](https://github.com/blader/humanizer): removes signs of AI writing from English text
 - [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic): removes AI-style phrasing from Chinese academic text
 - [academic-research-skills](https://github.com/Imbad0202/academic-research-skills): research, writing, review, revision and finalization (CC BY-NC 4.0, non-commercial use only)
 
-## Sources
+## Sources and contributing
 
 Most prompts are taken or adapted from public projects such as Leey21, ahmetbersoz and alfonso0512; 7 were written for this catalog. Each entry's source and upstream license are in the [full catalog](CATALOG_EN.md#sources-and-licenses). Pull requests are welcome; see the [PR template](.github/PULL_REQUEST_TEMPLATE.md).

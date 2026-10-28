@@ -12,7 +12,7 @@
 
 > Each candidate states its provenance: verbatim (matches upstream apart from formatting or typo fixes), adapted (abridged or rewritten, with the upstream section named), or written for this catalog (no upstream counterpart).
 
-> Most prompt texts are in Chinese, and some also make the model reply in Chinese. The 3.3 and 6.1 primary candidates reply entirely in Chinese; the 5.2 primary candidate has a Chinese output template, so it normally replies in Chinese as well; the 2.1, 2.3, 3.1, 3.2 and 5.1 primary candidates add a Chinese translation or change log; 5.3 and 5.4 expect a Chinese description as input. For English-only output, edit the output lines of the prompt (change 中文 to English, or delete the Part you do not need), or add a line such as "Reply in English" at the end.
+> Most prompt texts are in Chinese, and some also make the model reply in Chinese. The 3.3 and 6.1 primary candidates reply entirely in Chinese; the 5.2 primary candidate has a Chinese output template, so it normally replies in Chinese as well; the 1.1, 2.1, 2.3, 3.1, 3.2 and 5.1 primary candidates add a Chinese translation or change log; 5.3 and 5.4 expect a Chinese description as input. For English-only output, edit the output lines of the prompt (change 中文 to English, or delete the Part you do not need), or add a line such as "Reply in English" at the end.
 
 ---
 
@@ -656,6 +656,9 @@ Please write a few paragraphs using the following list of points [LIST]
 1. 默认假设：假定当前草稿已经过多次修改和校对
 2. 挑剔性原则：只关注严重影响理解的逻辑混乱
 3. 严禁优化"可改可不改"的措辞问题
+
+# Input
+[在此处粘贴待审查的论文段落]
 ```
 
 💡 **Highlights**: Paragraph-by-paragraph analysis, flaw type annotation, actionable improvement suggestions — more detailed than the Leey21 version.
@@ -696,6 +699,9 @@ Suggest novel applications of [TOPIC SENTENCE] within [RESEARCH DOMAIN]
 # Role
 你是一位经验丰富的科研工作者和审稿人，擅长从文献综述中识别研究空白。
 
+# Task
+请基于用户提供的【文献综述/相关工作总结】，分析并指出潜在的研究空白。
+
 # Analysis Dimensions
 1. **方法层面**: 现有方法有哪些共同假设？
 2. **数据/实验层面**: 有哪些场景未被覆盖？
@@ -709,6 +715,9 @@ Suggest novel applications of [TOPIC SENTENCE] within [RESEARCH DOMAIN]
 
 ## 💡 研究建议
 - [给出 2-3 个具体的研究建议]
+
+# Input
+[在此处粘贴文献综述或相关工作总结]
 ```
 
 💡 **Highlights**: Four-dimensional analysis framework (method / data / theory / application), structured research gap output.
@@ -727,7 +736,7 @@ Generate an abstract for a scientific paper based on this information for: [PARA
 
 ### Alternative Candidate
 
-> Source: adapted excerpt of the structure and constraints from [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md), v2.0 section "摘要写作"; the task and input were added here, and the sentence count was corrected to 4–6
+> Source: adapted excerpt of the structure and constraints from [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md), v2.0 section "摘要写作"; the task and input were rewritten for this scenario, and the sentence count was corrected to 4–6
 
 ```
 # Task
@@ -816,7 +825,7 @@ Analyze the strengths and weaknesses of this methodology: [PARAGRAPHS]
 
 ### Alternative Candidate
 
-> Source: adapted excerpt from the Method part of [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md), v2.0 section "论文大纲生成"; the last two items, task and input were added here
+> Source: adapted excerpt from the Method part of [alfonso0512/research-writing-skill](https://github.com/alfonso0512/research-writing-skill/blob/291ba9d673b90ad466924fc28956056b98048ad7/SKILL.md), v2.0 section "论文大纲生成"; the last two items were added here, and the task and input were rewritten for this scenario
 
 ```
 # Task

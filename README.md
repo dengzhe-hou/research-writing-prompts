@@ -1,12 +1,20 @@
-<p align="center">
-  <img src="docs/banner.svg" alt="科研写作 Prompt 合集" width="100%">
-</p>
+<h1 align="center"><p>科研写作 Prompt 合集</p></h1>
+<h3 align="center"><p>22 类论文写作任务的首选 prompt，复制就能用</p></h3>
 
 <p align="center">中文 | <a href="README_EN.md">English</a></p>
 
-写论文常用的 22 类任务，每类的首选 prompt 都在下面。点开、复制、粘贴到任意大模型，把方括号里的内容换成你的就能用。
+从中译英、润色、去 AI 味，到摘要、实验分析、图表标题和回复审稿人，写论文时常做的 22 类任务各有一条首选 prompt，就在下面，点开即可复制。
 
-共 41 个候选模板，多数场景另有替代写法；完整内容和来源说明见[完整目录](CATALOG.md)。按候选分组计数，同组内的多条短 prompt 可按需选用。
+所有 prompt 都是纯文本，不依赖特定模型，ChatGPT、Claude、Gemini、DeepSeek、Kimi 都能用。多数整理自公开项目，每条都标了出处。
+
+> [!TIP]
+> [完整目录](CATALOG.md)里有全部 41 个候选模板，包括多数场景的替代写法和每条的来源与许可。同一候选里有几条短 prompt 的，按需挑一条用。
+
+## 怎么用
+
+1. 在下面找到你的任务，点开，用代码块右上角的按钮复制。
+2. 粘贴到大模型的对话框，把方括号里的提示（如 `[在此处粘贴你的中文草稿]`）换成你的内容。
+3. 模型可能编数据和文献，输出里的数字和引用要逐条核对。
 
 ## Prompt
 
@@ -804,19 +812,18 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 ## 用之前看一眼
 
-- 模型可能编数据和文献，输出里的数字和引用要逐条核对。
 - 不少 prompt 的人设是计算机领域的审稿人或编辑，其他领域请把开头的 Role 改成自己的领域。1.1 要求全文用一般现在时，心理学、神经科学论文通常要改掉这一条。
 
 ## 用 Claude Code、Codex 或 Cursor？
 
 文献综述、写整篇论文、审稿回复这类多步任务，推荐直接装这些项目的 skill：
 
-- [nature-skills](https://github.com/Yuan1z0825/nature-skills)：按 Nature 系期刊标准润色、写作、作图、审稿、回复审稿人等，共 19 个 skill
+- [nature-skills](https://github.com/Yuan1z0825/nature-skills)：按 Nature 系期刊标准润色、写作、作图、审稿、回复审稿人等
 - [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)：从找想法、查文献到写论文、审稿回复的一整套 skill，偏机器学习方向
 - [humanizer](https://github.com/blader/humanizer)：去掉英文文本里的 AI 痕迹
 - [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic)：中文学术写作去 AI 味
 - [academic-research-skills](https://github.com/Imbad0202/academic-research-skills)：研究、写作、审稿、修订、定稿全流程（CC BY-NC 4.0，仅限非商业使用）
 
-## 来源
+## 来源与贡献
 
 大部分 prompt 整理或改编自 Leey21、ahmetbersoz、alfonso0512 等公开项目，7 条为本仓库编写。每条的出处和上游许可见[完整目录](CATALOG.md#来源与许可)。欢迎提 PR，格式见 [PR 模板](.github/PULL_REQUEST_TEMPLATE.md)。
