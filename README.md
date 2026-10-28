@@ -9,8 +9,8 @@
   <a href="README_EN.md"><img alt="English README" src="https://img.shields.io/badge/README-English-4d6bfe"/></a>
   <a href="CATALOG.md"><img alt="完整目录" src="https://img.shields.io/badge/%E5%AE%8C%E6%95%B4%E7%9B%AE%E5%BD%95-CATALOG.md-4d6bfe"/></a>
   <br>
-  <a href="#3-prompt"><img alt="25 个场景" src="https://img.shields.io/badge/%E5%9C%BA%E6%99%AF-25-555555"/></a>
-  <a href="CATALOG.md"><img alt="46 个候选模板" src="https://img.shields.io/badge/%E5%80%99%E9%80%89%E6%A8%A1%E6%9D%BF-46-555555"/></a>
+  <a href="#3-prompt"><img alt="25 个场景" src="https://img.shields.io/badge/%E5%9C%BA%E6%99%AF-25-4d6bfe"/></a>
+  <a href="CATALOG.md"><img alt="46 个候选模板" src="https://img.shields.io/badge/%E5%80%99%E9%80%89%E6%A8%A1%E6%9D%BF-46-4d6bfe"/></a>
   <a href="CATALOG.md#来源与许可"><img alt="来源逐条标注" src="https://img.shields.io/badge/%E6%9D%A5%E6%BA%90-%E9%80%90%E6%9D%A1%E6%A0%87%E6%B3%A8-f5de53"/></a>
   <br>
   <a href="CATALOG.md"><b>完整目录</b>📖</a>

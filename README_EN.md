@@ -9,8 +9,8 @@
   <a href="README.md"><img alt="Chinese README" src="https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87-4d6bfe"/></a>
   <a href="CATALOG_EN.md"><img alt="Full catalog" src="https://img.shields.io/badge/Full%20catalog-CATALOG_EN.md-4d6bfe"/></a>
   <br>
-  <a href="#3-prompts"><img alt="25 scenarios" src="https://img.shields.io/badge/Scenarios-25-555555"/></a>
-  <a href="CATALOG_EN.md"><img alt="46 candidate templates" src="https://img.shields.io/badge/Candidates-46-555555"/></a>
+  <a href="#3-prompts"><img alt="25 scenarios" src="https://img.shields.io/badge/Scenarios-25-4d6bfe"/></a>
+  <a href="CATALOG_EN.md"><img alt="46 candidate templates" src="https://img.shields.io/badge/Candidates-46-4d6bfe"/></a>
   <a href="CATALOG_EN.md#sources-and-licenses"><img alt="Sources credited per entry" src="https://img.shields.io/badge/Sources-credited%20per%20entry-f5de53"/></a>
   <br>
   <a href="CATALOG_EN.md"><b>Full catalog</b>📖</a>
