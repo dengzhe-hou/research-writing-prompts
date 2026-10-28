@@ -1,24 +1,48 @@
-<h1 align="center"><p>Prompts for Papers</p></h1>
-<h3 align="center"><p>A ready-to-copy prompt for each of 22 paper-writing tasks</p></h3>
+<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-disable html -->
 
-<p align="center"><a href="README.md">中文</a> | English</p>
+<div align="center">
+  <img src="docs/logo_en.svg" width="60%" alt="Prompts for Papers" />
+</div>
+<hr>
+<div align="center">
+  <a href="README.md"><img alt="Chinese README" src="https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87-4d6bfe"/></a>
+  <a href="CATALOG_EN.md"><img alt="Full catalog" src="https://img.shields.io/badge/Full%20catalog-CATALOG_EN.md-4d6bfe"/></a>
+  <br>
+  <a href="#3-prompts"><img alt="25 scenarios" src="https://img.shields.io/badge/Scenarios-25-4d6bfe"/></a>
+  <a href="CATALOG_EN.md"><img alt="46 candidate templates" src="https://img.shields.io/badge/Candidates-46-4d6bfe"/></a>
+  <a href="CATALOG_EN.md#sources-and-licenses"><img alt="Sources credited per entry" src="https://img.shields.io/badge/Sources-credited%20per%20entry-f5de53"/></a>
+  <br>
+  <a href="CATALOG_EN.md"><b>Full catalog</b>📖</a>
+</div>
 
-From translation, polishing and removing AI-style wording to abstracts, experiment analysis, figure captions and responses to reviewers, each of 22 common paper-writing tasks has one primary prompt below. Open a task and copy it.
+## Table of Contents
 
-The prompts are plain text and work with any model, including ChatGPT, Claude, Gemini, DeepSeek and Kimi. Most are collected from public projects, and every entry names its source.
+1. [Introduction](#1-introduction)
+2. [How to use them](#2-how-to-use-them)
+3. [Prompts](#3-prompts)
+4. [Before you use them](#4-before-you-use-them)
+5. [Skills for multi-step work](#5-skills-for-multi-step-work)
+6. [Sources and contributing](#6-sources-and-contributing)
 
-> [!TIP]
-> The [full catalog](CATALOG_EN.md) has all 41 candidate templates, including alternatives for most scenarios and each entry's source and license. Where a candidate holds several short prompts, pick the one you need.
+## 1. Introduction
 
-## How to use them
+From translation, polishing and removing AI-style wording to abstracts, related work, experiment analysis, figure captions, responses to reviewers and cover letters, each of 25 common paper-writing tasks has one primary prompt in section 3. Open a task and copy it. The prompts are plain text and work with any model, including ChatGPT, Claude, Gemini, DeepSeek and Kimi. Most are collected from public projects, and every entry names its source.
 
-1. Find your task below, open it and copy the prompt with the button at the top right of the code block.
+> [!NOTE]
+> The [full catalog](CATALOG_EN.md) has all 46 candidate templates, including alternatives for most scenarios and each entry's source and license. Where a candidate holds several short prompts, pick the one you need.
+
+## 2. How to use them
+
+1. Find your task in section 3, open it and copy the prompt with the button at the top right of the code block.
 2. Paste it into a chat with any LLM and replace the bracketed placeholder (such as `[在此处粘贴你的中文草稿]`, "paste your Chinese draft here") with your text.
-3. Models can invent numbers and references, so check every number and citation in the output.
+3. Replace `【你的领域，如计算机科学、心理学】` ("your field, such as computer science or psychology") and `【目标期刊或会议】` ("target journal or conference") with your field and venue, for example "cognitive neuroscience" and "NeuroImage".
+4. Models can invent numbers and references, so check every number and citation in the output.
 
-Most prompts are written in Chinese. Models follow them fine; add "Reply in English" at the end for English output, and delete the Chinese translation or change-log lines that some prompts (1.1, 2.1, 2.3, 3.1, 3.2, 5.1) ask for.
+> [!NOTE]
+> Most prompts are written in Chinese. Models follow them fine; add "Reply in English" at the end for English output, and delete the Chinese translation or change-log lines that some prompts (1.1, 2.1, 2.3, 3.1, 3.2, 5.1) ask for.
 
-## Prompts
+## 3. Prompts
 
 <!-- prompts:start -->
 
@@ -29,7 +53,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 
 ```text
 # Role
-你是一位兼具顶尖科研写作专家与资深会议审稿人（ICML/ICLR 等）双重身份的助手。你的学术品味极高，对逻辑漏洞和语言瑕疵零容忍。
+你是一位兼具顶尖科研写作专家与【你的领域，如计算机科学、心理学】领域资深审稿人（熟悉【目标期刊或会议】）双重身份的助手。你的学术品味极高，对逻辑漏洞和语言瑕疵零容忍。
 
 # Task
 请处理我提供的【中文草稿】，将其翻译并润色为【英文学术论文片段】。
@@ -46,8 +70,8 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
    - 去除"AI味"，行文自然流畅，避免机械的连接词堆砌。
 
 3. 时态规范：
-   - 统一使用一般现在时描述方法、架构和实验结论。
-   - 仅在明确提及特定历史事件时使用过去时。
+   - 遵循【你的领域，如计算机科学、心理学】领域的时态惯例。默认使用一般现在时描述方法、架构和结论。
+   - 若该领域惯用过去时报告本研究的实验过程与结果（如心理学），这部分使用过去时；其他内容（如转述前人研究的具体发现）是否使用过去时，也按该领域惯例处理。
 
 4. 输出格式：
    - Part 1 [LaTeX]：只输出翻译成英文后的内容本身（LaTeX 格式）。
@@ -75,14 +99,14 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 
 ```text
 # Role
-你是一位计算机科学领域的资深学术编辑，专注于提升顶级会议（如 NeurIPS, ICLR, ICML）投稿论文的语言质量。
+你是一位【你的领域，如计算机科学、心理学】领域的资深学术编辑，专注于提升【目标期刊或会议】投稿论文的语言质量。
 
 # Task
 请对我提供的【英文 LaTeX 代码片段】进行深度润色与重写。你的目标不仅仅是修正错误，而是要全面提升文本的学术严谨性、清晰度与整体可读性，使其达到零错误的最高出版水准。
 
 # Constraints
 1. 学术规范与句式优化（核心任务）：
-   - 严谨性提升：调整句式结构以适配顶级会议的写作规范，增强文本的正式性与逻辑连贯性。
+   - 严谨性提升：调整句式结构以适配【目标期刊或会议】的写作规范，增强文本的正式性与逻辑连贯性。
    - 句法打磨：优化长难句的表达，使其更加流畅自然；消除由于非母语写作导致的生硬表达。
    - 零错误原则：彻底修正所有拼写、语法、标点及冠词使用错误。
 
@@ -119,7 +143,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 
 ```text
 # Role
-你是一位专注于计算机科学领域的资深中文学术编辑，深谙《计算机学报》、《软件学报》等核心期刊的审稿标准。你秉持尊重原著，克制修改的原则，具备敏锐的鉴赏力，只在确有必要时才进行干预。
+你是一位专注于【你的领域，如计算机科学、心理学】领域的资深中文学术编辑，深谙【目标期刊或会议】的审稿标准。你秉持尊重原著，克制修改的原则，具备敏锐的鉴赏力，只在确有必要时才进行干预。
 
 # Task
 请对提供的【中文论文段落】进行专业审视与润色。你的核心任务是：修复明显的语病与逻辑漏洞。特别注意：如果原文表达已经清晰、准确且符合学术规范，请务必保留原样，不要进行任何不必要的修改。
@@ -132,7 +156,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 2. 语体规范（现代学术风）：
    - 坚持当代学术书面语：行文应平实、流畅、准确。
      * 禁止事项：无故将"旨在"改为"拟"，将"是"改为"系"（拒绝陈旧的公文腔）。
-   - 彻底去除口语：将"我们发现"等口语表达替换为"实验结果表明"等客观陈述。
+   - 彻底去除口语：将"我们发现"等口语表达替换为"结果表明"等客观陈述。
 
 3. 逻辑与连贯性：
    - 仅在逻辑断裂时显化连接词，否则优先依赖语序进行自然衔接，拒绝机械堆砌连接词。
@@ -168,7 +192,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 
 ```text
 # Role
-你是一位计算机科学领域的资深学术编辑，专注于提升论文的自然度与可读性。你的任务是将大模型生成的机械化文本重写为符合顶级会议（如 ACL, NeurIPS）标准的自然学术表达。
+你是一位【你的领域，如计算机科学、心理学】领域的资深学术编辑，专注于提升论文的自然度与可读性。你的任务是将大模型生成的机械化文本重写为符合【目标期刊或会议】标准的自然学术表达。
 
 # Task
 请对我提供的【英文 LaTeX 代码片段】进行"去 AI 化"重写，使其语言风格接近人类母语研究者。
@@ -194,7 +218,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 5. 输出格式：
    - Part 1 [LaTeX]：输出重写后的代码（如果原文已足够好，则输出原文）。
      * 语言要求：必须是全英文。
-     * 必须对特殊字符进行转义（例如：%、_、&）。
+     * 必须对正文中未转义的特殊字符进行转义（例如：%、_、&）；已转义的字符、注释以及命令参数（如 \cite、\ref、\label 中的键名）保持原样。
      * 保持数学公式原样（保留 $ 符号）。
    - Part 2 [Translation]：对应的中文直译。
    - Part 3 [Modification Log]：
@@ -205,7 +229,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 # Execution Protocol
 在输出前，请自查：
 1. 拟人度检查：确认文本语气自然。
-2. 必要性检查：当前的修改是否真的提升了可读性？如果是为了换词而换词，请撤销修改并判定为"检测通过"。
+2. 必要性检查：当前的修改是否真的提升了可读性？如果是为了换词而换词，请撤销该处修改；若撤销后已无任何修改，则判定为"检测通过"。
 
 # Input
 [在此处粘贴你的英文 LaTeX 代码]
@@ -220,7 +244,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 
 ```text
 # Role
-你是一位计算机科学领域的资深中文学术编辑（熟知《计算机学报》、《软件学报》、《自动化学报》等国内顶刊的审稿标准），专注于提升中文学术论文的自然度与严谨性。你的任务是将大模型生成的、带有明显"机器味"或"翻译腔"的中文文本，重写为符合人类母语研究者习惯的自然学术表达。
+你是一位【你的领域，如计算机科学、心理学】领域的资深中文学术编辑（熟知【目标期刊或会议】的审稿标准），专注于提升中文学术论文的自然度与严谨性。你的任务是将大模型生成的、带有明显"机器味"或"翻译腔"的中文文本，重写为符合人类母语研究者习惯的自然学术表达。
 
 # Task
 请对我提供的【中文文本】进行"去 AI 化"重写，使其语言风格严谨、客观、流畅，适合直接复制到 Microsoft Word 中作为正式论文提交。
@@ -228,7 +252,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 # Constraints
 1. 词汇规范化（意图驱动）：
    - 凡是无实质信息量的情感渲染性表达，或试图通过华丽辞藻掩盖逻辑空洞的词汇（如"毋庸置疑"、"耦合内聚"、"不可磨灭的贡献"、"范式转移"、"颠覆性"，"深刻"，"切中要害"，"本质"等），均应替换为具体、客观的学术描述。
-   - 示例：将"为了解决这一痛点"改为"针对上述问题"；将"展现了令人惊叹的能力"改为"表现出显著的性能提升"。
+   - 示例：将"为了解决这一痛点"改为"针对上述问题"；将"展现了令人惊叹的能力"改为直接陈述原文已给出的具体结果。
    - 保持核心专业术语的准确性，绝对不要为了"去 AI 味"而随意替换领域内的专有名词。
 
 2. 句式与结构自然化（去翻译腔与机械感）：
@@ -255,7 +279,7 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
 在输出前，请自查：
 1. 拟人度检查：读起来是否像一位严谨的国内高校学者写的论文？是否准确传达了学术意图而非单纯堆砌辞藻？
 2. 纯净度检查：是否去除了所有的 Markdown 符号，方便直接粘贴入 Word？
-3. 必要性检查：当前的修改是否真的提升了学术连贯性？如果是为了换词而换词，请撤销修改并判定为"检测通过"。
+3. 必要性检查：当前的修改是否真的提升了学术连贯性？如果是为了换词而换词，请撤销该处修改；若撤销后已无任何修改，则判定为"检测通过"。
 
 # Input
 [在此处粘贴你的中文学术文本]
@@ -285,14 +309,14 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
    - 剔除冗余：删除无意义的填充词，例如将 "in order to" 简化为 "to"。
 
 3. 视觉与风格：
-   - 保持 LaTeX 源码纯净，不要使用加粗、斜体或引号。
+   - 保持 LaTeX 源码纯净，不要新增加粗、斜体或引号（原文已有的保持原样）。
    - 尽量不要使用破折号（—）。
    - 拒绝列表格式（Itemization），保持连贯段落。
 
 4. 输出格式：
    - Part 1 [LaTeX]：只输出缩减后的英文 LaTeX 代码本身。
      * 语言要求：必须是全英文。
-     * 必须对特殊字符进行转义（如 %、_、&）。
+     * 必须对正文中未转义的特殊字符进行转义（如 %、_、&）；已转义的字符、注释以及命令参数（如 \cite、\ref、\label 中的键名）保持原样。
      * 保持数学公式原样（保留 $ 符号）。
    - Part 2 [Translation]：对应的中文直译（用于核对核心信息是否完整保留）。
    - Part 3 [Modification Log]：使用中文简要说明你调整了哪些地方（例如：删除了冗余词 "XXX"，合并了 "YYY" 从句）。
@@ -330,14 +354,14 @@ Most prompts are written in Chinese. Models follow them fine; add "Reply in Engl
    - 表达升级：将简单的描述替换为更精准、更具描述性的学术表达。
 
 3. 视觉与风格：
-   - 保持 LaTeX 源码纯净，不要使用加粗、斜体或引号。
+   - 保持 LaTeX 源码纯净，不要新增加粗、斜体或引号，原文已有的格式命令保持原样。
    - 尽量不要使用破折号（—）。
    - 拒绝列表格式（Itemization），保持连贯段落。
 
 4. 输出格式：
    - Part 1 [LaTeX]：只输出扩写后的英文 LaTeX 代码本身。
      * 语言要求：必须是全英文。
-     * 必须对特殊字符进行转义（如 %、_、&）。
+     * 必须对正文中未转义的特殊字符进行转义（如 %、_、&），\cite、\ref、\label 等命令中的键和已转义的字符保持原样。
      * 保持数学公式原样（保留 $ 符号）。
    - Part 2 [Translation]：对应的中文直译（用于核对新增的逻辑是否符合原意）。
    - Part 3 [Modification Log]：使用中文简要说明你调整了哪些地方（例如：补充了隐含结论 "XXX"，增加了连接词 "YYY"）。
@@ -421,11 +445,11 @@ Generate an abstract for a scientific paper based on this information for: [PARA
 <summary><b>4.3</b> Literature review: give a topic or text; get a review, a summary or a comparison of two theories (check every reference)</summary>
 
 ```text
-Conduct a literature review on [TOPIC SENTENCE] and provide review paper references
+Conduct a literature review on [TOPIC SENTENCE] and provide review paper references. Do not invent references; mark any reference you cannot verify as [to verify].
 ```
 
 ```text
-Summarize the scholarly literature, including in text citations on [PARAGRAPHS]
+Summarize the scholarly literature, including in text citations on [PARAGRAPHS]. Use only citations that appear in the paragraphs and mark claims without one as [citation needed].
 ```
 
 ```text
@@ -442,7 +466,7 @@ Create objectives and methodology for [TOPIC SENTENCE]
 ```
 
 ```text
-Write a detailed methodology for the topic: [TOPIC SENTENCE]
+Write a detailed methodology for the topic: [TOPIC SENTENCE]. Mark every sample size, data source, or parameter I have not given as [to be specified].
 ```
 
 ```text
@@ -486,6 +510,80 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 </details>
 
+<details>
+<summary><b>4.8</b> Title: paste the abstract or key contributions and name the venue; get 3 to 5 title options, each with a short rationale (rationales in Chinese)</summary>
+
+```text
+# Role
+你是【你的领域，如计算机科学、心理学】的资深论文作者和期刊编辑，熟悉这个领域论文标题的写法。
+
+# Task
+请根据我提供的摘要或主要贡献，为论文拟 3-5 个英文标题候选，写法符合我在 Input 中填写的目标期刊或会议的标题惯例。
+
+# Constraints
+1. 标题要同时做到三件事：检索时能被找到，读者一眼能判断要不要读，主张的强弱和研究设计相符。
+2. 把最重要的概念放在前 3-4 个词，再写具体的对象、场景或机制，需要时加上研究设计信号（如 "a randomized trial"、"evidence from X"）。
+3. 候选尽量覆盖不同类型，包括描述型（X and Y in Z）、陈述型（X increases Y under Z）和冒号复合型（短语加具体副标题）。疑问型只在目标期刊常见时使用。
+4. 长度一般不超过 15 个词，大小写（Title Case 或 Sentence case）按目标期刊惯例。期刊惯例不同时按期刊来，并在说明里写明。
+5. 不用 "A Study of"、"An Investigation of"、"Toward a Framework for" 这类空泛开头。缩写只用本领域公认的。
+6. 主张强度不超过输入能支持的范围。输入里没有因果证据就不用因果动词，没有比较结果就不写 "outperforms" 或 "better"。
+7. 标题里的方法名、数据集、研究对象、样本量和数字只能来自我的输入，不要自行编造。拟标题需要但输入里没有的信息写 [待补]。
+8. 如果我没有填目标期刊，就按【你的领域，如计算机科学、心理学】的通常写法拟，并在说明里注明。不要编造某个期刊的具体规定。
+
+# Output
+逐条列出标题候选。每个候选下用 1-2 句中文说明它属于哪种类型、突出了哪个关键词或贡献、适合什么样的期刊。最后用一句话说明最推荐哪一个和原因。
+
+# Input
+目标期刊或会议（没有可留空）：[在此处填写]
+
+[在此处粘贴摘要或主要贡献]
+```
+
+</details>
+
+<details>
+<summary><b>4.9</b> Related work: paste your method summary and the papers you have read (cite key plus a one-line note), get a Related Work section grouped by theme that states how your paper differs, citing only your list</summary>
+
+```text
+# Role
+你是【你的领域，如计算机科学、心理学】的资深研究者，熟悉该领域论文 Related Work 章节的写法。
+
+# Task
+请根据我提供的【本文方法与贡献概要】和【我读过的文献清单】，写一节英文 Related Work（LaTeX 格式）。这一节的目的不是复述文献，而是把已有工作按主题分组，说清楚本文和每组工作的区别。
+
+# Constraints
+1. 只用清单里的文献：
+   - 只引用我在清单里给出的文献，用 \cite{key} 标注，key 原样照抄清单。不要添加清单以外的文献，也不要自己生成 key。
+   - 对每篇文献的描述只能来自我写的备注。备注里没有的方法细节、数据集、数字和结论都不要写；确实需要但我没提供的事实，写 [待补：需要的信息]。
+   - 某篇文献的备注太简略、无法判断它属于哪一组时，不要猜，把它列进 Part 3。
+
+2. 按主题分组：
+   - 按研究思路或要解决的子问题分成 2 到 4 组，每组一段，段首一句点明这组工作的共同思路。不要按年份排列，也不要逐篇罗列。
+   - 每段先写这组工作做到了什么，再用一到两句说明本文的区别：本文处理了这组工作没有覆盖的哪个问题，或在哪个假设、设置上不同。区别只能依据我写的方法概要和文献备注；两者都没有给出依据时，写 [待补：本文与这组工作的区别]，不要自己推断。概要里没有给出依据的，不要写本文“更好”“首次”或“优于”。
+   - 对前人工作的评价保持客观，写清它的适用范围，不要贬低。
+
+3. 写作要求：
+   - 学术英语，用一般现在时描述已有工作的方法，正文不用列表。
+   - 正文中的特殊字符必须转义（例如：%、_、&），\cite{} 里的 key 保持原样。
+   - 篇幅 300 到 600 词，除非我另有说明。备注不够写到 300 词时宁可写短，不要为了凑字数添加备注里没有的内容。
+   - 不写结尾总结段，也不重复 Introduction 里的贡献列表。
+
+4. 输出格式：
+   - Part 1 [Grouping]：分组表（组名 / 包含的 cite key / 本文与这组的区别，一句话）。
+   - Part 2 [LaTeX]：完整的 Related Work 正文，从 \section{Related Work} 开始。
+   - Part 3 [待补与未用文献]：列出正文里每个 [待补] 的位置和需要我补充的信息，以及没有引用的文献和原因。没有就写“无”。
+   - 除以上三部分外，不要输出任何多余的对话。
+
+# Input
+本文方法与贡献概要：
+[在此处粘贴本文的方法概要和主要贡献，3 到 10 句即可]
+
+读过的文献清单（每行一篇，cite key 加一句备注）：
+[在此处粘贴文献清单，例如 smith2023graph 用图模型刻画 X，只在模拟数据上验证]
+```
+
+</details>
+
 ### Experiments and figures
 
 <details>
@@ -496,7 +594,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 你是一位具有敏锐洞察力的资深数据科学家，擅长处理复杂的实验数据并撰写高质量的学术分析报告。
 
 # Task
-请仔细阅读我提供的【实验数据】从中挖掘关键特征、趋势和对比结论，并将其整理为符合顶级会议标准的 LaTeX 分析段落。
+请仔细阅读我提供的【实验数据】从中挖掘关键特征、趋势和对比结论，并将其整理为符合【目标期刊或会议】标准的 LaTeX 分析段落。
 
 # Constraints
 1. 数据真实性：
@@ -505,7 +603,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 2. 分析深度：
    - 拒绝简单的报账式描述（例如不要只说 A 是 0.5，B 是 0.6），重点在于比较和趋势分析。
-   - 关注点包括：方法的有效性（SOTA 比较）、参数的敏感性、性能与效率的权衡，以及消融实验中的关键模块贡献。
+   - 关注点包括（只分析数据中实际包含的方面）：方法的有效性（SOTA 比较）、参数的敏感性、性能与效率的权衡，以及消融实验中的关键模块贡献。
 
 3. 排版与格式规范：
    - 严禁使用加粗或斜体：正文中不要使用 \textbf 或 \emph，依靠文字逻辑来表达重点。
@@ -515,7 +613,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
    - 不要使用列表环境，保持纯文本段落。
 
 4. 输出格式：
-   - Part 1 [LaTeX]：只输出分析后的 LaTeX 代码。
+   - Part 1 [LaTeX]：只输出分析后的英文 LaTeX 代码。
      * 必须对特殊字符进行转义（例如：%、_、&）。
      * 保持数学公式原样（保留 $ 符号）。
      * 不同的结论点之间请空一行。
@@ -533,7 +631,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 ```text
 # Role
-你是一位就职于顶级科学期刊（如 Nature, Science）或计算机顶级会议（如 CVPR, NeurIPS）的资深数据可视化专家。你拥有极高的学术审美，严谨且专业。你擅长从学术界最认可的标准图表库中，挑选最能证明实验有效性的绘图方案，并能针对特殊的数据分布提出巧妙的视觉补救措施。
+你是一位就职于顶级科学期刊（如 Nature, Science）或【你的领域，如计算机科学、心理学】领域顶级期刊与会议的资深数据可视化专家，熟悉【目标期刊或会议】的图表要求。你拥有极高的学术审美，严谨且专业。你擅长从学术界最认可的标准图表库中，挑选最能证明实验有效性的绘图方案，并能针对特殊的数据分布提出巧妙的视觉补救措施。
 
 # 标准学术图表库
 在推荐前，请优先参考以下图表类型，选择最精确的一个或多个：
@@ -573,7 +671,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 请分析我提供的实验数据或实验目的，基于上述图表库，推荐 1 到 2 种最佳绘图方案。
 
 # Constraints
-1. 来源优先：请优先从上述列表中选择。若有更适合当前数据且符合顶会标准的其他学术图表，也可以推荐，但杜绝非学术的商业图表。
+1. 来源优先：请优先从上述列表中选择。若有更适合当前数据且符合【目标期刊或会议】标准的其他学术图表，也可以推荐，但杜绝非学术的商业图表。
 2. 统计严谨：若数据包含多次实验结果或方差信息，强烈建议添加误差线或置信区间；若为单次实验数据，则无需强行添加。
 3. 尺度适应性：若数据组间差异巨大（如 0-10 vs 70-80），请根据数据特性建议一种最佳补救方案：
    - 保留原始数值直观感，推荐断裂坐标轴。
@@ -607,7 +705,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 你是一位经验丰富的学术编辑，擅长撰写精准、规范的论文插图标题。
 
 # Task
-请将我提供的【中文描述】转化为符合顶级会议规范的【英文图标题】。
+请将我提供的【中文描述】转化为符合【目标期刊或会议】规范的【英文图标题】。若该期刊或会议对图标题的大小写或句号有明确规定，以其规定为准，下面的格式规范只在没有规定时适用。
 
 # Constraints
 1. 格式规范：
@@ -620,7 +718,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 3. 输出格式：
    - 只输出翻译后的英文标题文本。
-   - 不要包含 Figure 1: 这样的前缀，只输出内容本身。
+   - 不要包含 Figure 1: 这样的前缀，只输出内容本身，该文本将放入 LaTeX 的 \caption{} 中。
    - 必须对特殊字符进行转义（例如：%、_、&）。
    - 保持数学公式原样（保留 $ 符号）。
 
@@ -638,7 +736,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 你是一位经验丰富的学术编辑，擅长撰写精准、规范的论文表格标题。
 
 # Task
-请将我提供的【中文描述】转化为符合顶级会议规范的【英文表标题】。
+请将我提供的【中文描述】转化为符合【目标期刊或会议】规范的【英文表标题】。如果【目标期刊或会议】对标题大小写有明确规定，以其规定为准，下面的大小写规则只在没有规定时使用。
 
 # Constraints
 1. 格式规范：
@@ -666,15 +764,15 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 ```text
 # Role
-你是一位世界顶尖的学术插画专家，专注于为计算机视觉与人工智能领域的顶级会议（如 CVPR, NeurIPS, ICLR）绘制高质量、直观且美观的论文架构图。
+你是一位世界顶尖的学术插画专家，专注于为【你的领域，如计算机科学、心理学】领域的【目标期刊或会议】绘制高质量、直观且美观的论文架构图。
 
 # Task
 请阅读我提供的【论文方法描述】，首先深刻理解其核心机制、模块组成和数据流向。然后，基于你的理解，设计并绘制一张专业的学术架构图。
 
 # Visual Constraints
 1. 风格基调：
-   - 必须具备顶会论文风格：专业、干净、现代、极简主义。
-   - 核心美学：采用扁平化矢量插画风格，线条简洁，参考 DeepMind 或 OpenAI 论文中的图表美学。
+   - 必须具备【目标期刊或会议】的论文风格：专业、干净、现代、极简主义。
+   - 核心美学：采用扁平化矢量插画风格，线条简洁，参考【目标期刊或会议】近期论文中的图表美学。
    - 拒绝卡通感、油画感或过度艺术化，保持严谨的学术图表美学。
    - 背景必须是纯白色，无任何纹理或阴影。
 
@@ -703,14 +801,14 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 </details>
 
-### Review
+### Review and submission
 
 <details>
 <summary><b>6.1</b> Self-review before submission: paste the paper, get a review, a score and how to fix each weakness (replies in Chinese)</summary>
 
 ```text
 # Role
-你是一位严格、精准的资深学术审稿人，熟悉顶级 CS 会议（如 NeurIPS, ICML, ICLR）的审稿标准。
+你是一位严格、精准的资深学术审稿人，熟悉【你的领域，如计算机科学、心理学】领域【目标期刊或会议】的审稿标准。
 
 # Task
 请深度阅读我提供的【论文 PDF】，撰写一份建设性的审稿报告。
@@ -724,7 +822,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 2. 审稿维度：
    - 社区贡献（不仅仅是数学密度）。
-   - 严谨性（公平的 baseline、完整的消融实验、版本对齐）。
+   - 严谨性（对照或 baseline 是否公平，消融、控制分析或稳健性检验是否完整，比较条件是否对齐；按本领域惯例判断哪些适用）。
    - 一致性（实验是否真的验证了引言中的声明？）。
 
 3. 输出格式：
@@ -750,7 +848,7 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 
 ```text
 # Role
-你是一位经验丰富的学术论文作者，擅长撰写针对审稿人意见的逐条回复（Point-by-Point Response）。你深谙顶会修稿流程，能精准区分"必须改"和"可以礼貌拒绝"的意见。
+你是一位经验丰富的学术论文作者，擅长撰写针对审稿人意见的逐条回复（Point-by-Point Response）。你深谙【目标期刊或会议】的修稿流程，能精准区分"必须改"和"可以礼貌拒绝"的意见。
 
 # Task
 请根据我提供的【审稿意见】和【我对每条意见的实际处理】，为我的论文生成一份完整的 Response to Reviewers。
@@ -762,9 +860,9 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
    - 评估优先级：P1 必须修复 / P2 建议修复 / P3 可选考虑。
    - 将每条意见映射到论文对应章节。
 
-2. 回复策略（四种状态）：
+2. 回复策略（四种状态；Positive 类意见只需致谢，策略列写 N/A）：
    - RESOLVED：已修改，说明具体修改位置（页码+段落）。
-   - DELIBERATE_LIMITATION：承认是设计边界，需在 Limitations 章节引用说明。
+   - DELIBERATE_LIMITATION：承认是设计边界，需在论文讨论局限性的部分说明。
    - UNRESOLVABLE：需解释约束条件，建议未来工作解决。
    - REVIEWER_DISAGREE：基于文献/数据的礼貌反驳，必须引用支撑材料。
 
@@ -789,20 +887,20 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
      **Author Response**: [详细回复]
      **Changes Made**: [具体修改位置]
 
-     ### R1-2: [意见摘要]
+     ### Comment R1-2: [意见摘要]
      ...
 
      ## Response to Reviewer 2
      ...
 
      ## Summary of Changes
-     [300-500 字总结主要修改]
+     [总结主要修改，只写我列出的修改，篇幅随修改多少而定，不超过 300 词]
 
    - Part 3 [Change Log]：修改对照表（原始页码/修改后页码/章节/修改描述）。
    - 除以上三部分外，不要输出任何多余的对话。
 
 # Input
-[在此处粘贴审稿意见全文]
+[在此处粘贴论文标题和审稿意见全文]
 
 [在此处写明你对每条意见的实际处理：改了什么、改在哪里，或不改的理由]
 
@@ -810,15 +908,77 @@ Can you suggest 3 directions for future research on this topic: [PARAGRAPH]?
 ```
 
 </details>
+
+<details>
+<summary><b>6.3</b> Cover letter: paste the journal, title, abstract and main contributions, get a one-page letter to the editor with [待补] placeholders for reviewers and declarations you did not supply</summary>
+
+```text
+## 角色
+你是一位经验丰富的【你的领域，如计算机科学、心理学】论文作者，擅长撰写专业的投稿 Cover Letter。
+
+## 任务
+请根据我提供的目标期刊、论文标题、摘要和主要贡献，写一封给期刊编辑的英文投稿信。
+
+## 约束
+1. 正文控制在一页以内（不超过 400 词），语气专业克制。
+2. 研究问题、结果和数字只能来自我提供的摘要和主要贡献，不添加我没写的结果、数据、引用或比较，也不使用 "groundbreaking"、"the first" 这类我没给出依据的说法。
+3. 适合本刊的理由只根据我提供的期刊信息写。我没提供期刊范围时，写 [待补：本刊范围与本文的契合点]，不要自行描述期刊定位。
+4. 我没提供的事项一律留占位符，不要替我编写或默认声明：推荐审稿人写 [待补：推荐审稿人姓名、单位、邮箱]，回避审稿人写 [待补：回避审稿人及理由]，利益冲突写 [待补：利益冲突声明]，数据与代码可用性写 [待补：数据可用性声明]，伦理审批写 [待补：伦理审批机构与编号，不适用则删除]，AI 工具使用写 [待补：AI 使用声明，按期刊要求]。
+5. 不要编造编辑姓名、审稿人姓名、日期、基金号或机构信息。编辑姓名未知时用 "Dear Editor,"。
+6. 下方方括号小标题只说明每段写什么，成稿中不保留这些小标题。
+
+## 输出格式
+[Date]
+
+Dear Editor,
+
+We are pleased to submit our manuscript entitled "[论文标题]" for consideration in [期刊名称].
+
+[研究亮点]
+[说明研究问题、核心贡献和重要性，2-3 句]
+
+[适合理由]
+[1 句，说明本文为何适合该期刊]
+
+[声明事项]
+- This manuscript is original, has not been published elsewhere, and is not under consideration by another journal.
+- All authors have approved the submission.
+- [利益冲突声明]
+- [数据可用性声明]
+- [伦理审批与 AI 使用声明，按需保留]
+
+[推荐与回避审稿人]（期刊要求时保留）
+
+Thank you for considering our manuscript.
+
+Sincerely,
+[通讯作者姓名]
+[机构]
+[联系方式]
+
+信件之后另起一段，列出信中所有 [待补] 项以及仍未填写的 [Date] 和通讯作者信息，并提醒我核实两条标准声明（未一稿多投、全体作者同意）是否属实。
+
+## 输入
+[在此处粘贴目标期刊名称，可附期刊范围或投稿须知中的相关要求]
+
+[在此处粘贴论文标题和摘要]
+
+[在此处列出主要贡献，每条一句]
+
+[可选：粘贴通讯作者信息，以及你已确定的推荐审稿人、利益冲突、数据可用性等内容]
+```
+
+</details>
 <!-- prompts:end -->
 
-## Before you use them
+## 4. Before you use them
 
-- Many prompts cast the model as a computer-science reviewer or editor; for other fields, change the opening Role. 1.1 also requires the present tense throughout, which psychology and neuroscience papers usually do not follow.
+- By default, 1.1 uses the present tense for methods and conclusions. Fields such as psychology report their own methods and results in the past tense, and the prompt already says to follow the field's convention; adjust it further if needed.
+- 5.5 (architecture diagram) needs a model that can generate images.
 
-## Using Claude Code, Codex or Cursor?
+## 5. Skills for multi-step work
 
-For multi-step work such as literature reviews, drafting a whole paper or rebuttals, install the skills from these projects:
+For multi-step work such as literature reviews, drafting a whole paper or rebuttals in Claude Code, Codex or Cursor, install the skills from these projects:
 
 - [nature-skills](https://github.com/Yuan1z0825/nature-skills): skills for Nature-style polishing, writing, figures, peer review, responses to reviewers and more
 - [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep): a full set of skills from idea discovery and literature review to paper writing, review and rebuttal, aimed at machine-learning research
@@ -826,6 +986,6 @@ For multi-step work such as literature reviews, drafting a whole paper or rebutt
 - [humanizer-zh-academic](https://github.com/redbaronyyyyy-eng/humanizer-zh-academic): removes AI-style phrasing from Chinese academic text
 - [academic-research-skills](https://github.com/Imbad0202/academic-research-skills): research, writing, review, revision and finalization (CC BY-NC 4.0, non-commercial use only)
 
-## Sources and contributing
+## 6. Sources and contributing
 
-Most prompts are taken or adapted from public projects such as Leey21, ahmetbersoz and alfonso0512; 7 were written for this catalog. Each entry's source and upstream license are in the [full catalog](CATALOG_EN.md#sources-and-licenses). Pull requests are welcome; see the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
+Most prompts are taken or adapted from public projects such as Leey21, ahmetbersoz and alfonso0512; 8 were written for this catalog. Each entry's source and upstream license are in the [full catalog](CATALOG_EN.md#sources-and-licenses). Pull requests are welcome; see the [PR template](.github/PULL_REQUEST_TEMPLATE.md).

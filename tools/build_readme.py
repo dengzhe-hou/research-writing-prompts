@@ -50,6 +50,10 @@ GROUPS = [
                 'Conclusion: paste the paper or abstract, get a conclusion (optionally with recommendations)'),
         ('4.7', '未来工作：贴研究概要，得到 3 个未来研究方向',
                 'Future work: paste a summary of the study, get 3 directions for future research'),
+        ('4.8', '标题：贴摘要或主要贡献，填目标期刊，得到 3 到 5 个标题候选和各自的理由',
+                'Title: paste the abstract or key contributions and name the venue; get 3 to 5 title options, each with a short rationale (rationales in Chinese)'),
+        ('4.9', '相关工作：贴方法概要和读过的文献清单（cite key 加一句备注），得到按主题分组、写明本文区别的 Related Work，只引用你给的文献',
+                'Related work: paste your method summary and the papers you have read (cite key plus a one-line note), get a Related Work section grouped by theme that states how your paper differs, citing only your list'),
     ]),
     ('实验与图表', 'Experiments and figures', [
         ('5.1', '实验分析：贴实验数据表，得到 LaTeX 分析段落和中文直译，不许编数据',
@@ -63,11 +67,13 @@ GROUPS = [
         ('5.5', '架构图：贴摘要和方法，得到一张方法架构图（要用能生成图片的模型）',
                 'Architecture diagram: paste the abstract and method, get a diagram (needs an image-generating model)'),
     ]),
-    ('审稿', 'Review', [
+    ('审稿与投稿', 'Review and submission', [
         ('6.1', '投稿前自审：贴整篇论文，得到审稿报告、评分，以及每个弱点怎么修',
                 'Self-review before submission: paste the paper, get a review, a score and how to fix each weakness (replies in Chinese)'),
         ('6.2', '回复审稿人：贴审稿意见和你实际做的修改，得到完整回复信和修改对照表',
                 'Response to reviewers: paste the comments and what you actually changed, get a full response letter and change log'),
+        ('6.3', '投稿信：贴目标期刊、标题、摘要和主要贡献，得到一页给编辑的投稿信，没提供的审稿人和声明留 [待补]',
+                'Cover letter: paste the journal, title, abstract and main contributions, get a one-page letter to the editor with [待补] placeholders for reviewers and declarations you did not supply'),
     ]),
 ]
 
