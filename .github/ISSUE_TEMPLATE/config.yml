@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Full catalog
+    url: https://github.com/dengzhe-hou/research-writing-prompts/blob/master/CATALOG.md
+    about: Read the complete catalog before opening a prompt request.
+  - name: Web edition
+    url: https://dengzhe-hou.github.io/research-writing-prompts/
+    about: Search and copy prompts without cloning the repository.

@@ -1,0 +1,80 @@
+name: Bug or bad output
+description: Report a prompt that fails, a broken link, or a rendering problem.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please remove private text, unpublished results and personal data from any example.
+  - type: dropdown
+    id: scenario
+    attributes:
+      label: Scenario
+      description: Which prompt ID is involved?
+      options:
+        - "1.1"
+        - "2.1"
+        - "2.2"
+        - "2.3"
+        - "2.4"
+        - "3.1"
+        - "3.2"
+        - "3.3"
+        - "4.1"
+        - "4.2"
+        - "4.3"
+        - "4.4"
+        - "4.5"
+        - "4.6"
+        - "4.7"
+        - "4.8"
+        - "4.9"
+        - "5.1"
+        - "5.2"
+        - "5.3"
+        - "5.4"
+        - "5.5"
+        - "6.1"
+        - "6.2"
+        - "6.3"
+        - "Other / site"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and version
+      placeholder: "e.g. GPT-5.2, Claude Opus 4.5, DeepSeek V4, Qwen 3"
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Input used
+      description: Paste the (redacted) input, including the `MODE:` line if you used one.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What the model produced
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed private or unpublished content from the example.
+          required: true
+        - label: I ran `python tools/build.py --check` and `python tools/check.py` (if reporting a repository issue).
