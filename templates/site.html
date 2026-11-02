@@ -12,152 +12,335 @@
 <meta property="og:url" content="https://dengzhe-hou.github.io/research-writing-prompts/">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://dengzhe-hou.github.io/research-writing-prompts/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f7fb;
-    --panel: #ffffff;
-    --text: #1c2333;
-    --muted: #5b6577;
-    --line: #dfe3ec;
-    --accent: #2f5fd0;
-    --accent-soft: #e9efff;
-    --ok: #1f7a4d;
-    --warn: #8a5a00;
-    --code: #f4f6f9;
-    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .04);
-    --radius: 12px;
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --ink: #1b1a17;
+    --muted: #6b675f;
+    --faint: #706b62;
+    --line: rgba(27, 26, 23, .12);
+    --chip: #f1eee7;
+    --accent: #2f5bd3;
+    --on-ink: #fbfaf7;
+    --code-bg: #f4f2ec;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .05);
+    --serif: Newsreader, "Songti SC", "Noto Serif SC", SimSun, Georgia, serif;
+    --sans: Inter, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1420;
-      --panel: #161d2b;
-      --text: #e7ebf3;
-      --muted: #a3adc0;
-      --line: #2a3445;
-      --accent: #7ea2ff;
-      --accent-soft: #1e2a44;
-      --ok: #6fd3a2;
-      --warn: #f0c36a;
-      --code: #0b101a;
+    :root:not([data-theme="light"]) {
+      --bg: #131311;
+      --surface: #1c1b19;
+      --ink: #ece9e2;
+      --muted: #a39f96;
+      --faint: #948f86;
+      --line: rgba(236, 233, 226, .12);
+      --chip: #282724;
+      --accent: #8aa7ff;
+      --on-ink: #131311;
+      --code-bg: #181816;
       --shadow: none;
     }
   }
+  :root[data-theme="dark"] {
+    --bg: #131311;
+    --surface: #1c1b19;
+    --ink: #ece9e2;
+    --muted: #a39f96;
+    --faint: #948f86;
+    --line: rgba(236, 233, 226, .12);
+    --chip: #282724;
+    --accent: #8aa7ff;
+    --on-ink: #131311;
+    --code-bg: #181816;
+    --shadow: none;
+  }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    font: 14px/1.55 var(--sans);
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 64px; }
-  header.top { display: flex; gap: 22px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 0 22px; }
-  .brand { display: flex; gap: 16px; align-items: center; }
-  .logo { width: 84px; height: 84px; object-fit: contain; }
-  h1 { font-size: clamp(22px, 3vw, 32px); line-height: 1.2; margin: 0 0 6px; letter-spacing: -.01em; }
-  .sub { color: var(--muted); margin: 0; font-size: 14px; }
-  .top-links { display: flex; gap: 10px; flex-wrap: wrap; font-size: 14px; }
-  .top-links a { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 7px 12px; }
-  .top-links a:hover { text-decoration: none; border-color: var(--accent); }
-  .toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: 14px 0 12px; margin-bottom: 20px; }
-  .searchrow { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .searchbox { position: relative; flex: 1 1 340px; }
-  .searchbox input { width: 100%; padding: 12px 44px 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 15px; outline: none; }
-  .searchbox input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-  .searchbox kbd { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; }
-  .btn { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 9px; padding: 9px 12px; font-size: 14px; cursor: pointer; }
-  .btn:hover { border-color: var(--accent); color: var(--accent); }
-  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-  .chip { border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
-  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .status { color: var(--muted); font-size: 13px; margin: 12px 2px 0; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 20px 16px; margin: 0 0 16px; scroll-margin-top: 150px; }
-  .card:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-  .card h2 { font-size: 19px; margin: 0 0 4px; letter-spacing: -.01em; }
-  .card h2 .id { color: var(--accent); font-variant-numeric: tabular-nums; }
-  .card .en { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
-  .card .summary { margin: 8px 0 10px; }
-  .card .summary .zh { margin: 0; }
-  .card .summary .en { margin: 3px 0 0; }
-  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 4px; }
-  .tag { font-size: 12px; color: var(--muted); background: var(--accent-soft); border-radius: 999px; padding: 2px 9px; }
-  details { border-top: 1px solid var(--line); padding: 12px 0 4px; }
-  details > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text); list-style: none; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-  details > summary::-webkit-details-marker { display: none; }
-  details > summary::before { content: "▸"; color: var(--muted); font-size: 12px; }
-  details[open] > summary::before { content: "▾"; }
-  .tier { font-weight: 400; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
-  .block { position: relative; margin: 10px 0 0; }
-  pre { margin: 0; background: var(--code); border: 1px solid var(--line); border-radius: 9px; padding: 14px; overflow: auto; max-height: 60vh; }
-  code { font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
-  .copy { position: absolute; top: 8px; right: 8px; font-size: 12px; padding: 5px 9px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; opacity: .9; }
+  a { color: inherit; }
+  a:hover { color: var(--accent); }
+  h1, h2, h3 { font-weight: 500; letter-spacing: -.01em; }
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 20;
+    background: var(--ink); color: var(--on-ink); padding: 8px 14px; border-radius: 0 0 8px 0;
+  }
+  .skip:focus { left: 0; }
+
+  .shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: 100vh; }
+  .side {
+    position: sticky; top: 0; height: 100vh; padding: 20px 14px;
+    border-right: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 500 19px var(--serif); }
+  .brand:hover { color: var(--ink); }
+  .mark {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--ink); color: var(--bg);
+    display: grid; place-items: center;
+    font: italic 13px/1 var(--serif);
+  }
+  .side nav { display: flex; flex-direction: column; gap: 2px; }
+  .side nav button {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+    width: 100%; text-align: left; border: 0; background: transparent;
+    padding: 7px 10px; border-radius: 8px; color: var(--muted);
+    font: 400 13px/1.35 var(--sans); cursor: pointer;
+  }
+  .side nav button:hover { background: var(--chip); color: var(--ink); }
+  .side nav button[aria-current="page"] { background: var(--ink); color: var(--on-ink); }
+  .side nav button .n { font-size: 11px; color: var(--faint); }
+  .side nav button .en { display: block; font-size: 10.5px; color: var(--faint); letter-spacing: .02em; }
+  .side nav button[aria-current="page"] .n,
+  .side nav button[aria-current="page"] .en { color: var(--on-ink); opacity: .72; }
+  .theme-toggle {
+    font: inherit; font-size: 12.5px; text-align: left;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    border-radius: 8px; padding: 6px 10px; cursor: pointer;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--faint); }
+  .feedback { font-size: 12.5px; color: var(--faint); text-decoration: none; }
+  .feedback:hover { color: var(--ink); }
+  .side-foot { margin-top: auto; font-size: 11.5px; line-height: 1.5; color: var(--faint); }
+  .side-foot a { color: inherit; }
+
+  .main { min-width: 0; padding: 32px clamp(16px, 4vw, 48px) 64px; }
+  .hero { max-width: 780px; margin: 40px auto 34px; text-align: center; }
+  .eyebrow {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--faint); margin: 0 0 10px;
+  }
+  .hero h1 {
+    font: 500 clamp(36px, 6vw, 64px)/1.02 var(--serif);
+    letter-spacing: -.03em; margin: 0 0 14px;
+  }
+  .lede { color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0; }
+  .search {
+    display: flex; gap: 8px; margin: 26px auto 14px; max-width: 620px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 999px; padding: 6px; box-shadow: var(--shadow);
+  }
+  .search input {
+    flex: 1; min-width: 0; border: 0; background: transparent;
+    font: inherit; font-size: 15px; color: var(--ink); padding: 8px 14px; outline: none;
+  }
+  .search button {
+    background: var(--ink); color: var(--on-ink); border: 0; border-radius: 999px;
+    padding: 8px 18px; font: 500 14px var(--sans); cursor: pointer;
+  }
+  .search button:hover { color: var(--on-ink); opacity: .9; }
+  .quick { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .quick a {
+    text-decoration: none; border: 1px solid var(--line); border-radius: 999px;
+    padding: 5px 13px; background: var(--surface); color: var(--muted); font-size: 12.5px;
+  }
+  .quick a:hover { border-color: var(--faint); color: var(--ink); }
+  .quick a span { color: var(--faint); margin-left: 2px; }
+
+  .toolbar {
+    position: sticky; top: 0; z-index: 4;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 10px 0; margin: 8px 0 0;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    font: 500 13px var(--sans); border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); border-radius: 999px; padding: 7px 14px; cursor: pointer;
+    text-decoration: none;
+  }
+  .btn:hover { border-color: var(--faint); color: var(--ink); }
+  .btn.sm { padding: 5px 12px; font-size: 12px; }
+  .status { font-size: 12px; color: var(--faint); margin: 0; }
+  .status b { color: var(--muted); font-weight: 500; }
+
+  .cat { margin: 34px 0 0; }
+  .sechead {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 16px;
+  }
+  .sechead h2 { font: 500 24px var(--serif); margin: 0; letter-spacing: -.01em; }
+  .sechead h2 .en {
+    font: 500 11px var(--sans); color: var(--faint);
+    text-transform: uppercase; letter-spacing: .08em; margin-left: 8px;
+  }
+  .sechead .count { color: var(--faint); font-size: 12px; white-space: nowrap; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; align-items: start; }
+
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: var(--shadow); overflow: hidden;
+    transition: transform .15s, border-color .15s;
+    scroll-margin-top: 64px;
+  }
+  .card[hidden], .cat[hidden] { display: none !important; }
+  .card:hover { transform: translateY(-2px); border-color: var(--faint); }
+  .card:target { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+  .cbody { padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .meta {
+    font-size: 10.5px; color: var(--faint);
+    text-transform: uppercase; letter-spacing: .08em;
+    display: flex; gap: 8px; align-items: baseline;
+  }
+  .meta .id { color: var(--accent); font-weight: 600; letter-spacing: .04em; }
+  .name { font: 500 20px/1.2 var(--serif); margin: 0; letter-spacing: -.01em; }
+  .name .en { font: 400 12px var(--sans); color: var(--faint); margin-left: 6px; letter-spacing: 0; }
+  .summary { font: 400 15px/1.45 var(--serif); color: var(--ink); margin: 2px 0 0; }
+  .summary-en { font: 400 12px/1.5 var(--sans); color: var(--muted); margin: 2px 0 0; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 3px; }
+  .tag {
+    font-size: 10.5px; color: var(--faint); background: var(--chip);
+    border-radius: 999px; padding: 2px 8px; letter-spacing: .02em;
+  }
+
+  .card details { border-top: 1px solid var(--line); padding: 9px 18px 12px; }
+  .card details:first-of-type { margin-top: 4px; }
+  .card details > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
+    font: 500 11.5px var(--sans); text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
+  }
+  .card details > summary::-webkit-details-marker { display: none; }
+  .card details > summary::before { content: "▸"; color: var(--faint); font-size: 11px; }
+  .card details[open] > summary::before { content: "▾"; }
+  .card details > summary:hover { color: var(--ink); }
+  .tier {
+    font: 400 10px var(--sans); text-transform: none; letter-spacing: .02em;
+    border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; color: var(--faint);
+  }
+  .cand { margin: 10px 0 0; }
+  .block { position: relative; margin: 9px 0 0; }
+  pre {
+    margin: 0; padding: 14px; overflow: auto; max-height: 58vh;
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
+  }
+  code {
+    font: 12.5px/1.65 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere;
+    color: var(--ink);
+  }
+  .copy {
+    position: absolute; top: 7px; right: 7px;
+    font: 500 10.5px var(--sans); padding: 4px 8px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer;
+  }
   .copy:hover { color: var(--accent); border-color: var(--accent); }
-  .copy.done { color: var(--ok); border-color: var(--ok); }
-  .src { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
-  .src a { color: var(--accent); }
-  .note { font-size: 12.5px; color: var(--warn); margin: 8px 0 0; }
-  .empty { text-align: center; color: var(--muted); padding: 60px 0; }
-  footer { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 18px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  @media (max-width: 640px) {
-    .wrap { padding: 18px 12px 48px; }
-    .logo { width: 56px; height: 56px; }
-    .card { padding: 16px 14px 12px; }
-    .top-links { width: 100%; }
-    .searchbox kbd { display: none; }
+  .copy.done { color: #1f7a4d; border-color: #1f7a4d; }
+  .src { font-size: 11.5px; line-height: 1.5; color: var(--faint); margin: 8px 0 0; }
+  .src a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .src a:hover { color: var(--accent); }
+  .note { font-size: 11.5px; line-height: 1.5; color: var(--muted); margin: 8px 0 0; }
+  .note details { border: 0; padding: 4px 0 0; }
+  .note summary { font-size: 11.5px; text-transform: none; letter-spacing: 0; }
+  .note code { font-size: 11.5px; background: var(--chip); border-radius: 4px; padding: 1px 4px; }
+
+  .empty { color: var(--muted); text-align: center; padding: 60px 0; font: 400 16px var(--serif); }
+  .foot {
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
+    color: var(--faint); font-size: 11.5px; line-height: 1.7;
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .foot a { color: var(--muted); }
+
+  @media (max-width: 760px) {
+    .shell { grid-template-columns: minmax(0, 1fr); }
+    .side {
+      position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line);
+      padding: 12px 16px; gap: 10px;
+    }
+    .side nav { flex-direction: row; overflow-x: auto; gap: 4px; padding-bottom: 2px; }
+    .side nav button { width: auto; white-space: nowrap; padding: 6px 10px; }
+    .side nav button .en { display: none; }
+    .side-foot { display: none; }
+    .theme-toggle { align-self: flex-start; }
+    .main { padding: 20px 16px 48px; }
+    .hero { margin-top: 14px; }
+    .hero h1 { font-size: clamp(32px, 10vw, 46px); }
+    .grid { grid-template-columns: minmax(0, 1fr); }
+    .cbody { padding: 14px 14px 12px; }
+    .card details { padding: 9px 14px 12px; }
   }
   @media print {
-    .toolbar, .top-links, .copy, footer .noprint { display: none !important; }
+    .side, .toolbar, .quick, .search, .copy, .skip { display: none !important; }
+    .shell { display: block; }
+    .main { padding: 0; }
     body { background: #fff; }
     .card { box-shadow: none; break-inside: avoid; }
     pre { max-height: none; }
     details { display: block; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card { transition: none; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <div class="brand">
-      <img class="logo" src="logo_zh.svg" alt="">
-      <div>
-        <h1>科研写作 Prompt 合集</h1>
-        <p class="sub">Research Writing Prompts · {{scenario_count}} 个场景 · {{candidate_count}} 条候选 · 更新于 {{updated}}</p>
-      </div>
+<a class="skip" href="#list">跳到列表 / Skip to list</a>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="#top">
+      <span class="mark">P.</span>
+      <span>Prompt et al.</span>
+    </a>
+    <nav id="nav" aria-label="Categories"></nav>
+    <button class="theme-toggle" id="theme" type="button">Theme: auto</button>
+    <a class="feedback" href="https://github.com/dengzhe-hou/research-writing-prompts">GitHub · 反馈 / Feedback</a>
+    <div class="side-foot">
+      内容 CC BY 4.0 · 代码 MIT<br>
+      第三方 prompt 版权归原作者<br>
+      Design reference: <a href="https://looketal.com">Look et al.</a>
     </div>
-    <nav class="top-links" aria-label="Links">
-      <a href="https://github.com/dengzhe-hou/research-writing-prompts">GitHub</a>
-      <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/README.md">README</a>
-      <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/LICENSE">CC BY 4.0</a>
-    </nav>
-  </header>
+  </aside>
 
-  <div class="toolbar">
-    <div class="searchrow">
-      <div class="searchbox">
+  <main class="main" id="top">
+    <header class="hero">
+      <p class="eyebrow">Research writing · Prompt catalog · 2026</p>
+      <h1>科研写作 Prompt 合集</h1>
+      <p class="lede">{{scenario_count}} 个场景，{{candidate_count}} 条候选。搜索、筛选、复制；每条都标了来源和许可。</p>
+      <form class="search" id="searchForm" role="search">
         <input id="q" type="search" autocomplete="off" placeholder="搜索任务、摘要或 prompt 内容… / Search tasks or prompt text…" aria-label="Search prompts">
-        <kbd>/</kbd>
+        <button type="submit">搜索</button>
+      </form>
+      <div class="quick" id="quick"></div>
+    </header>
+
+    <div class="toolbar">
+      <div class="actions">
+        <button class="btn sm" id="expand" type="button">展开全部</button>
+        <button class="btn sm" id="collapse" type="button">收起全部</button>
       </div>
-      <button class="btn" id="expand" type="button">展开全部</button>
-      <button class="btn" id="collapse" type="button">收起全部</button>
+      <p class="status" id="status" aria-live="polite"></p>
     </div>
-    <div class="chips" id="chips" role="group" aria-label="Category filter"></div>
-    <p class="status" id="status" aria-live="polite"></p>
-  </div>
 
-  <main id="list"></main>
+    <div id="list"></div>
 
-  <footer>
-    <span>内容 CC BY 4.0 · 代码 MIT · 第三方 prompt 版权归原作者</span>
-    <span class="noprint">Generated from <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/data/prompts.yaml">data/prompts.yaml</a></span>
-  </footer>
+    <footer class="foot">
+      <span>内容 CC BY 4.0 · 代码 MIT · 第三方 prompt 版权归原作者</span>
+      <span>更新于 {{updated}} · <a href="https://github.com/dengzhe-hou/research-writing-prompts">GitHub</a> · <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/LICENSE">License</a></span>
+    </footer>
+  </main>
 </div>
 
 <script>
 const DATA = {{data_json}};
 const state = { q: "", cat: "all" };
 const $ = (s) => document.querySelector(s);
+const root = document.documentElement;
+const THEMES = ["auto", "light", "dark"];
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -173,7 +356,11 @@ function haystack(sc) {
   ].join(" ").toLowerCase();
 }
 function copyText(text, btn) {
-  const done = () => { btn.textContent = "已复制 / Copied"; btn.classList.add("done"); setTimeout(() => { btn.textContent = "复制 / Copy"; btn.classList.remove("done"); }, 1600); };
+  const done = () => {
+    btn.textContent = "已复制 / Copied";
+    btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "复制 / Copy"; btn.classList.remove("done"); }, 1600);
+  };
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text).then(done).catch(() => fallback(text, done));
   } else {
@@ -182,86 +369,155 @@ function copyText(text, btn) {
 }
 function fallback(text, done) {
   const ta = document.createElement("textarea");
-  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
-  document.body.appendChild(ta); ta.select();
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
   try { document.execCommand("copy"); done(); } catch (_) {}
   ta.remove();
 }
 function candidateHTML(sc, c, idx) {
-  const lang = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
-  const label = c.tier === "primary" ? (lang === "zh" ? "首选" : "Primary") : (lang === "zh" ? "替代" : "Alternative");
-  const src = lang === "zh" ? c.source_zh : c.source_en;
-  const hl = lang === "zh" ? c.highlight_zh : c.highlight_en;
-  const note = lang === "zh" ? c.note_zh : c.note_en;
+  const isPrimary = c.tier === "primary";
+  const label = isPrimary ? "首选 / Primary" : "替代 / Alternative";
+  const src = c.source_zh;
+  const hl = c.highlight_zh;
+  const note = c.note_zh;
   const blocks = c.blocks.map((b, i) => `
     <div class="block">
       <button class="copy" type="button" data-copy="${esc(sc.id)}-${idx}-${i}">复制 / Copy</button>
       <pre><code id="c-${esc(sc.id)}-${idx}-${i}">${esc(b)}</code></pre>
     </div>`).join("");
-  return `<details ${c.tier === "primary" ? "data-primary" : ""}>
-    <summary>${label} <span class="tier">${c.language || ""}</span></summary>
+  return `<details class="cand" ${isPrimary ? "data-primary" : ""}>
+    <summary>${label} <span class="tier">${esc(c.language || "")}</span></summary>
     ${blocks}
     ${hl ? `<p class="src">💡 ${md(hl)}</p>` : ""}
-    ${note ? (note.trim().startsWith("<details>") ? note : `<p class="note">${md(note)}</p>`) : ""}
-    <p class="src">${lang === "zh" ? "来源" : "Source"}: ${md(src)}</p>
+    ${note ? (note.trim().startsWith("<details>") ? `<div class="note">${note}</div>` : `<p class="note">${md(note)}</p>`) : ""}
+    <p class="src">来源 / Source: ${md(src)}</p>
   </details>`;
 }
 function cardHTML(sc) {
-  return `<article class="card" id="p-${esc(sc.id.replace(".", "-"))}" data-cat="${esc(sc.category)}" data-text="${esc(haystack(sc))}">
-    <h2><span class="id">${esc(sc.id)}</span> ${esc(sc.title_zh)}</h2>
-    <p class="en">${esc(sc.title_en)}</p>
-    <div class="summary"><p class="zh">${esc(sc.summary_zh)}</p><p class="en">${esc(sc.summary_en)}</p></div>
-    <div class="meta"><span class="tag">${esc(sc.category_zh)}</span><span class="tag">${esc(sc.category_en)}</span></div>
+  return `<article class="card" id="p-${esc(sc.id.replace(".", "-"))}" data-cat="${esc(sc.category)}" data-text="${esc(haystack(sc))}" data-cands="${sc.candidates.length}">
+    <div class="cbody">
+      <div class="meta"><span class="id">${esc(sc.id)}</span><span>${esc(sc.category_en)}</span></div>
+      <h3 class="name">${esc(sc.title_zh)} <span class="en">${esc(sc.title_en)}</span></h3>
+      <p class="summary">${esc(sc.summary_zh)}</p>
+      <p class="summary-en">${esc(sc.summary_en)}</p>
+      <div class="tags"><span class="tag">${esc(sc.category_zh)}</span><span class="tag">${sc.candidates.length} 条候选</span></div>
+    </div>
     ${sc.candidates.map((c, i) => candidateHTML(sc, c, i)).join("")}
   </article>`;
+}
+function renderNav() {
+  const cats = [{ id: "all", title_zh: "全部", title_en: "All", scenarios: DATA.scenarios }].concat(DATA.categories.map((c) => ({
+    ...c,
+    scenarios: DATA.scenarios.filter((s) => s.category === c.id)
+  })));
+  $("#nav").innerHTML = cats.map((c) => `<button type="button" data-cat="${esc(c.id)}" ${c.id === "all" ? 'aria-current="page"' : ""}>
+    <span>${esc(c.title_zh)}<span class="en">${esc(c.title_en)}</span></span>
+    <span class="n">${c.scenarios.length}</span>
+  </button>`).join("");
+  $("#nav").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.cat = b.dataset.cat;
+    $("#nav").querySelectorAll("button").forEach((x) => x.removeAttribute("aria-current"));
+    b.setAttribute("aria-current", "page");
+    apply();
+    $("#list").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+function renderQuick() {
+  const picks = [["1.1", "中译英"], ["2.1", "英文润色"], ["4.2", "摘要"], ["4.3", "文献综述"], ["5.1", "实验分析"], ["6.2", "回复审稿人"]];
+  $("#quick").innerHTML = picks.map(([id, label]) => `<a href="#p-${id.replace(".", "-")}">${label} <span>${id}</span></a>`).join("");
+}
+function renderList() {
+  $("#list").innerHTML = DATA.categories.map((cat) => {
+    const scs = DATA.scenarios.filter((s) => s.category === cat.id);
+    return `<section class="cat" data-cat="${esc(cat.id)}">
+      <div class="sechead"><h2>${esc(cat.title_zh)} <span class="en">${esc(cat.title_en)}</span></h2><span class="count">${scs.length} 个场景</span></div>
+      <div class="grid">${scs.map(cardHTML).join("")}</div>
+    </section>`;
+  }).join("");
 }
 function apply() {
   const q = state.q.trim().toLowerCase();
   let shown = 0;
-  document.querySelectorAll(".card").forEach((el) => {
-    const okCat = state.cat === "all" || el.dataset.cat === state.cat;
-    const okQ = !q || el.dataset.text.includes(q);
-    const ok = okCat && okQ;
-    el.hidden = !ok;
-    if (ok) shown++;
+  let cands = 0;
+  document.querySelectorAll(".cat").forEach((section) => {
+    let sectionShown = 0;
+    section.querySelectorAll(".card").forEach((el) => {
+      const okCat = state.cat === "all" || el.dataset.cat === state.cat;
+      const okQ = !q || el.dataset.text.includes(q);
+      const ok = okCat && okQ;
+      el.hidden = !ok;
+      if (ok) {
+        sectionShown++;
+        shown++;
+        cands += Number(el.dataset.cands || 0);
+      }
+    });
+    section.hidden = sectionShown === 0;
   });
-  $("#status").textContent = (document.documentElement.lang.startsWith("zh") ? "显示 " : "Showing ") + shown + " / " + DATA.scenario_count + (document.documentElement.lang.startsWith("zh") ? " 个场景" : " scenarios");
+  $("#status").innerHTML = `显示 <b>${shown}</b> / ${DATA.scenario_count} 个场景 · <b>${cands}</b> / ${DATA.candidate_count} 条候选`;
   $("#list").querySelector(".empty")?.remove();
   if (!shown) {
     const p = document.createElement("p");
     p.className = "empty";
-    p.textContent = document.documentElement.lang.startsWith("zh") ? "没有匹配的 prompt，换个关键词试试。" : "No matching prompt. Try another keyword.";
+    p.textContent = "没有匹配的 prompt，换个关键词试试。";
     $("#list").appendChild(p);
   }
 }
+function openHash() {
+  if (!location.hash) return;
+  const el = document.getElementById(location.hash.slice(1));
+  if (!el) return;
+  el.querySelectorAll("details").forEach((d) => { d.open = true; });
+  el.scrollIntoView({ block: "start" });
+}
+function initTheme() {
+  let theme = "auto";
+  try { theme = localStorage.getItem("rw-theme") || "auto"; } catch (_) {}
+  if (!THEMES.includes(theme)) theme = "auto";
+  const applyTheme = () => {
+    if (theme === "auto") root.removeAttribute("data-theme");
+    else root.dataset.theme = theme;
+    $("#theme").textContent = "主题 / Theme: " + theme;
+  };
+  $("#theme").addEventListener("click", () => {
+    theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
+    try { localStorage.setItem("rw-theme", theme); } catch (_) {}
+    applyTheme();
+  });
+  applyTheme();
+}
 function init() {
-  const chips = $("#chips");
-  const cats = [{ id: "all", title_zh: "全部", title_en: "All" }, ...DATA.categories];
-  chips.innerHTML = cats.map((c) => `<button class="chip" type="button" data-cat="${esc(c.id)}" aria-pressed="${c.id === "all"}">${esc(c.title_zh)} / ${esc(c.title_en)}</button>`).join("");
-  chips.addEventListener("click", (e) => {
-    const b = e.target.closest(".chip"); if (!b) return;
-    state.cat = b.dataset.cat;
-    chips.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  renderNav();
+  renderQuick();
+  renderList();
+  initTheme();
+  $("#searchForm").addEventListener("submit", (e) => { e.preventDefault(); apply(); $("#list").scrollIntoView({ behavior: "smooth" }); });
+  $("#q").addEventListener("input", (e) => { state.q = e.target.value; apply(); });
+  $("#quick").addEventListener("click", (e) => {
+    if (!e.target.closest("a")) return;
+    state.cat = "all"; state.q = ""; $("#q").value = "";
+    $("#nav").querySelectorAll("button").forEach((x) => x.removeAttribute("aria-current"));
+    $("#nav").querySelector('button[data-cat="all"]')?.setAttribute("aria-current", "page");
     apply();
   });
-  $("#list").innerHTML = DATA.scenarios.map(cardHTML).join("");
   $("#list").addEventListener("click", (e) => {
     const b = e.target.closest(".copy"); if (!b) return;
     const code = document.getElementById("c-" + b.dataset.copy);
     if (code) copyText(code.textContent, b);
   });
-  $("#q").addEventListener("input", (e) => { state.q = e.target.value; apply(); });
-  $("#expand").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => d.open = true));
-  $("#collapse").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => d.open = false));
+  $("#expand").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => { d.open = true; }));
+  $("#collapse").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => { d.open = false; }));
   document.addEventListener("keydown", (e) => {
     if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
     if (e.key === "Escape" && document.activeElement === $("#q")) { $("#q").value = ""; state.q = ""; apply(); $("#q").blur(); }
   });
-  if (location.hash) {
-    const el = document.getElementById(location.hash.slice(1));
-    if (el) { el.querySelectorAll("details").forEach((d) => d.open = true); el.scrollIntoView(); }
-  }
+  window.addEventListener("hashchange", openHash);
   apply();
+  openHash();
 }
 init();
 </script>
