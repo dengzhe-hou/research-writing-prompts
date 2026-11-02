@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>科研写作 Prompt 合集 · Research Writing Prompts</title>
+<meta name="description" content="25 个科研写作场景、46 条可复制 prompt。Research-writing prompts with search and one-click copy.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="科研写作 Prompt 合集 · Research Writing Prompts">
+<meta property="og:description" content="25 个科研写作场景、46 条可复制 prompt，支持搜索、筛选和一键复制。">
+<meta property="og:url" content="https://dengzhe-hou.github.io/research-writing-prompts/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://dengzhe-hou.github.io/research-writing-prompts/">
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --panel: #ffffff;
+    --text: #1c2333;
+    --muted: #5b6577;
+    --line: #dfe3ec;
+    --accent: #2f5fd0;
+    --accent-soft: #e9efff;
+    --ok: #1f7a4d;
+    --warn: #8a5a00;
+    --code: #f4f6f9;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .04);
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1420;
+      --panel: #161d2b;
+      --text: #e7ebf3;
+      --muted: #a3adc0;
+      --line: #2a3445;
+      --accent: #7ea2ff;
+      --accent-soft: #1e2a44;
+      --ok: #6fd3a2;
+      --warn: #f0c36a;
+      --code: #0b101a;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 64px; }
+  header.top { display: flex; gap: 22px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 0 22px; }
+  .brand { display: flex; gap: 16px; align-items: center; }
+  .logo { width: 84px; height: 84px; object-fit: contain; }
+  h1 { font-size: clamp(22px, 3vw, 32px); line-height: 1.2; margin: 0 0 6px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0; font-size: 14px; }
+  .top-links { display: flex; gap: 10px; flex-wrap: wrap; font-size: 14px; }
+  .top-links a { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 7px 12px; }
+  .top-links a:hover { text-decoration: none; border-color: var(--accent); }
+  .toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: 14px 0 12px; margin-bottom: 20px; }
+  .searchrow { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .searchbox { position: relative; flex: 1 1 340px; }
+  .searchbox input { width: 100%; padding: 12px 44px 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 15px; outline: none; }
+  .searchbox input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .searchbox kbd { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font: 12px ui-monospace, monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; }
+  .btn { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 9px; padding: 9px 12px; font-size: 14px; cursor: pointer; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .chip { border: 1px solid var(--line); background: var(--panel); color: var(--muted); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .status { color: var(--muted); font-size: 13px; margin: 12px 2px 0; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 20px 16px; margin: 0 0 16px; scroll-margin-top: 150px; }
+  .card:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .card h2 { font-size: 19px; margin: 0 0 4px; letter-spacing: -.01em; }
+  .card h2 .id { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .card .en { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+  .card .summary { margin: 8px 0 10px; }
+  .card .summary .zh { margin: 0; }
+  .card .summary .en { margin: 3px 0 0; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 4px; }
+  .tag { font-size: 12px; color: var(--muted); background: var(--accent-soft); border-radius: 999px; padding: 2px 9px; }
+  details { border-top: 1px solid var(--line); padding: 12px 0 4px; }
+  details > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text); list-style: none; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::before { content: "▸"; color: var(--muted); font-size: 12px; }
+  details[open] > summary::before { content: "▾"; }
+  .tier { font-weight: 400; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+  .block { position: relative; margin: 10px 0 0; }
+  pre { margin: 0; background: var(--code); border: 1px solid var(--line); border-radius: 9px; padding: 14px; overflow: auto; max-height: 60vh; }
+  code { font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .copy { position: absolute; top: 8px; right: 8px; font-size: 12px; padding: 5px 9px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; opacity: .9; }
+  .copy:hover { color: var(--accent); border-color: var(--accent); }
+  .copy.done { color: var(--ok); border-color: var(--ok); }
+  .src { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
+  .src a { color: var(--accent); }
+  .note { font-size: 12.5px; color: var(--warn); margin: 8px 0 0; }
+  .empty { text-align: center; color: var(--muted); padding: 60px 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 18px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  @media (max-width: 640px) {
+    .wrap { padding: 18px 12px 48px; }
+    .logo { width: 56px; height: 56px; }
+    .card { padding: 16px 14px 12px; }
+    .top-links { width: 100%; }
+    .searchbox kbd { display: none; }
+  }
+  @media print {
+    .toolbar, .top-links, .copy, footer .noprint { display: none !important; }
+    body { background: #fff; }
+    .card { box-shadow: none; break-inside: avoid; }
+    pre { max-height: none; }
+    details { display: block; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="logo_zh.svg" alt="">
+      <div>
+        <h1>科研写作 Prompt 合集</h1>
+        <p class="sub">Research Writing Prompts · {{scenario_count}} 个场景 · {{candidate_count}} 条候选 · 更新于 {{updated}}</p>
+      </div>
+    </div>
+    <nav class="top-links" aria-label="Links">
+      <a href="https://github.com/dengzhe-hou/research-writing-prompts">GitHub</a>
+      <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/README.md">README</a>
+      <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/LICENSE">CC BY 4.0</a>
+    </nav>
+  </header>
+
+  <div class="toolbar">
+    <div class="searchrow">
+      <div class="searchbox">
+        <input id="q" type="search" autocomplete="off" placeholder="搜索任务、摘要或 prompt 内容… / Search tasks or prompt text…" aria-label="Search prompts">
+        <kbd>/</kbd>
+      </div>
+      <button class="btn" id="expand" type="button">展开全部</button>
+      <button class="btn" id="collapse" type="button">收起全部</button>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Category filter"></div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+
+  <main id="list"></main>
+
+  <footer>
+    <span>内容 CC BY 4.0 · 代码 MIT · 第三方 prompt 版权归原作者</span>
+    <span class="noprint">Generated from <a href="https://github.com/dengzhe-hou/research-writing-prompts/blob/master/data/prompts.yaml">data/prompts.yaml</a></span>
+  </footer>
+</div>
+
+<script>
+const DATA = {{data_json}};
+const state = { q: "", cat: "all" };
+const $ = (s) => document.querySelector(s);
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function md(s) {
+  return esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+function haystack(sc) {
+  return [
+    sc.id, sc.title_zh, sc.title_en, sc.summary_zh, sc.summary_en,
+    sc.category_zh, sc.category_en,
+    ...sc.candidates.flatMap((c) => [c.source_zh, c.source_en, c.highlight_zh, c.highlight_en, ...c.blocks])
+  ].join(" ").toLowerCase();
+}
+function copyText(text, btn) {
+  const done = () => { btn.textContent = "已复制 / Copied"; btn.classList.add("done"); setTimeout(() => { btn.textContent = "复制 / Copy"; btn.classList.remove("done"); }, 1600); };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallback(text, done));
+  } else {
+    fallback(text, done);
+  }
+}
+function fallback(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); done(); } catch (_) {}
+  ta.remove();
+}
+function candidateHTML(sc, c, idx) {
+  const lang = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
+  const label = c.tier === "primary" ? (lang === "zh" ? "首选" : "Primary") : (lang === "zh" ? "替代" : "Alternative");
+  const src = lang === "zh" ? c.source_zh : c.source_en;
+  const hl = lang === "zh" ? c.highlight_zh : c.highlight_en;
+  const note = lang === "zh" ? c.note_zh : c.note_en;
+  const blocks = c.blocks.map((b, i) => `
+    <div class="block">
+      <button class="copy" type="button" data-copy="${esc(sc.id)}-${idx}-${i}">复制 / Copy</button>
+      <pre><code id="c-${esc(sc.id)}-${idx}-${i}">${esc(b)}</code></pre>
+    </div>`).join("");
+  return `<details ${c.tier === "primary" ? "data-primary" : ""}>
+    <summary>${label} <span class="tier">${c.language || ""}</span></summary>
+    ${blocks}
+    ${hl ? `<p class="src">💡 ${md(hl)}</p>` : ""}
+    ${note ? (note.trim().startsWith("<details>") ? note : `<p class="note">${md(note)}</p>`) : ""}
+    <p class="src">${lang === "zh" ? "来源" : "Source"}: ${md(src)}</p>
+  </details>`;
+}
+function cardHTML(sc) {
+  return `<article class="card" id="p-${esc(sc.id.replace(".", "-"))}" data-cat="${esc(sc.category)}" data-text="${esc(haystack(sc))}">
+    <h2><span class="id">${esc(sc.id)}</span> ${esc(sc.title_zh)}</h2>
+    <p class="en">${esc(sc.title_en)}</p>
+    <div class="summary"><p class="zh">${esc(sc.summary_zh)}</p><p class="en">${esc(sc.summary_en)}</p></div>
+    <div class="meta"><span class="tag">${esc(sc.category_zh)}</span><span class="tag">${esc(sc.category_en)}</span></div>
+    ${sc.candidates.map((c, i) => candidateHTML(sc, c, i)).join("")}
+  </article>`;
+}
+function apply() {
+  const q = state.q.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll(".card").forEach((el) => {
+    const okCat = state.cat === "all" || el.dataset.cat === state.cat;
+    const okQ = !q || el.dataset.text.includes(q);
+    const ok = okCat && okQ;
+    el.hidden = !ok;
+    if (ok) shown++;
+  });
+  $("#status").textContent = (document.documentElement.lang.startsWith("zh") ? "显示 " : "Showing ") + shown + " / " + DATA.scenario_count + (document.documentElement.lang.startsWith("zh") ? " 个场景" : " scenarios");
+  $("#list").querySelector(".empty")?.remove();
+  if (!shown) {
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.textContent = document.documentElement.lang.startsWith("zh") ? "没有匹配的 prompt，换个关键词试试。" : "No matching prompt. Try another keyword.";
+    $("#list").appendChild(p);
+  }
+}
+function init() {
+  const chips = $("#chips");
+  const cats = [{ id: "all", title_zh: "全部", title_en: "All" }, ...DATA.categories];
+  chips.innerHTML = cats.map((c) => `<button class="chip" type="button" data-cat="${esc(c.id)}" aria-pressed="${c.id === "all"}">${esc(c.title_zh)} / ${esc(c.title_en)}</button>`).join("");
+  chips.addEventListener("click", (e) => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    state.cat = b.dataset.cat;
+    chips.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    apply();
+  });
+  $("#list").innerHTML = DATA.scenarios.map(cardHTML).join("");
+  $("#list").addEventListener("click", (e) => {
+    const b = e.target.closest(".copy"); if (!b) return;
+    const code = document.getElementById("c-" + b.dataset.copy);
+    if (code) copyText(code.textContent, b);
+  });
+  $("#q").addEventListener("input", (e) => { state.q = e.target.value; apply(); });
+  $("#expand").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => d.open = true));
+  $("#collapse").addEventListener("click", () => document.querySelectorAll("details").forEach((d) => d.open = false));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
+    if (e.key === "Escape" && document.activeElement === $("#q")) { $("#q").value = ""; state.q = ""; apply(); $("#q").blur(); }
+  });
+  if (location.hash) {
+    const el = document.getElementById(location.hash.slice(1));
+    if (el) { el.querySelectorAll("details").forEach((d) => d.open = true); el.scrollIntoView(); }
+  }
+  apply();
+}
+init();
+</script>
+</body>
+</html>

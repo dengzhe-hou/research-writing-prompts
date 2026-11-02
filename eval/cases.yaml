@@ -1,0 +1,144 @@
+# Synthetic evaluation cases. Numbers are invented; do not cite them as results.
+# The runner loads the primary candidate for each prompt ID from data/prompts.yaml.
+
+- id: translate-escape
+  prompt: "1.1"
+  input: |
+    我们提出了一种轻量级的脑电解码框架，参数量为 3.2M。在 95% 的训练数据上，平均准确率达到 78.4%，比基线高 3.1 个百分点。代码中的配置项 model_v1 和 R&D 分支保持不变。
+  must_keep:
+    - "3.2"
+    - "95"
+    - "78.4"
+    - "3.1"
+    - "model\\_v1"
+    - "R\\&D"
+  must_not:
+    - "significantly"
+    - "state-of-the-art"
+    - "will be released"
+  notes: "Tests LaTeX escaping and whether the translation adds claims the input does not contain."
+
+- id: polish-minimal
+  prompt: "2.1"
+  input: |
+    Nowadays, the proposed model is very good at EEG decoding. However, the existing methods is hard to capture long-range dependence, and also ignore the frequency information. We propose a novel method to solve the above problems.
+  must_keep:
+    - "EEG decoding"
+    - "long-range"
+    - "frequency"
+  must_not:
+    - "significantly"
+    - "state-of-the-art"
+    - "outperforms"
+  notes: "Tests minimal editing: remove 'novel' and 'Nowadays', fix agreement, keep the two limitations."
+
+- id: zh-polish-restraint
+  prompt: "2.2"
+  input: |
+    本文提出一种多尺度注意力模块。该模块在不增加参数量的前提下提升了解码精度。我们觉得这个结果说明模块是有效的。
+  must_keep:
+    - "多尺度注意力模块"
+    - "不增加参数量"
+  must_not:
+    - "毋庸置疑"
+    - "范式转移"
+    - "显著"
+  notes: "Only the colloquial '我们觉得' should change; the first two sentences are already acceptable."
+
+- id: deai-english
+  prompt: "2.3"
+  input: |
+    In this work, we delve into the intricate interplay between attention and frequency and leverage a tapestry of multi-scale features to bolster EEG decoding.
+  must_keep:
+    - "attention"
+    - "frequency"
+    - "multi-scale"
+    - "EEG decoding"
+  must_not:
+    - "delve"
+    - "leverage"
+    - "tapestry"
+  notes: "Tests the de-AI word list and whether meaning survives the rewrite."
+
+- id: shorten-params
+  prompt: "3.1"
+  input: |
+    The proposed framework is trained on three public datasets with a batch size of 32 for 100 epochs, and it reaches 78.4% average accuracy with 14.7M parameters, which is 3.4 percentage points above the strongest baseline.
+  must_keep:
+    - "three"
+    - "32"
+    - "100"
+    - "78.4"
+    - "14.7"
+    - "3.4"
+  must_not:
+    - "two"
+    - "64"
+    - "200"
+  notes: "Tests that shortening does not drop a parameter or round a number."
+
+- id: logic-contradiction
+  prompt: "3.3"
+  input: |
+    We train the model on 10 subjects and evaluate it on the same 10 subjects. The dataset contains 20 subjects in total. All experiments use 20 training subjects, and no subject appears in both splits.
+  must_keep:
+    - "10"
+    - "20"
+  must_not:
+    - "检测通过"
+  notes: "There is a direct contradiction: 10 training subjects vs 20 training subjects."
+
+- id: litreview-nocite
+  prompt: "4.3"
+  input: |
+    Topic: frequency-aware attention for EEG decoding.
+    Papers I have read:
+    - Zhang et al., 2024, "Spectral Attention for EEG", doi:10.0000/example1
+    - Li et al., 2025, "Band-wise Transformers", doi:10.0000/example2
+    Write a short review using only these two papers. Mark anything you cannot support as [待检索].
+  must_keep:
+    - "Zhang"
+    - "Li"
+    - "待检索"
+  must_not:
+    - "et al., 2023"
+    - "10.0000/example3"
+  notes: "Tests that the model does not invent a third reference or a citation count."
+
+- id: results-noinvent
+  prompt: "5.1"
+  input: |
+    | Method | Accuracy (%) | Params (M) |
+    |---|---:|---:|
+    | Baseline A | 74.2 | 12.1 |
+    | Baseline B | 75.0 | 25.4 |
+    | Ours | 78.4 | 14.7 |
+    Single run; no significance test.
+  must_keep:
+    - "78.4"
+    - "75.0"
+    - "74.2"
+    - "14.7"
+    - "25.4"
+  must_not:
+    - "significantly"
+    - "p <"
+    - "95% confidence"
+  notes: "Tests arithmetic and the single-run limitation."
+
+- id: response-todo
+  prompt: "6.2"
+  input: |
+    Reviewer 1, Comment 1: "The paper lacks an ablation on the cross-band module."
+    What I actually did: I added the ablation in Table 3, Section 4.4. I did not run a new dataset.
+    Reviewer 1, Comment 2: "Please add a cross-dataset experiment."
+    What I actually did: nothing yet.
+  must_keep:
+    - "Table 3"
+    - "Section 4.4"
+    - "待补"
+  must_not:
+    - "we have added a cross-dataset experiment"
+    - "Page 7"
+    - "Table 5"
+  notes: "Tests that unperformed work and unknown page numbers are marked, not invented."

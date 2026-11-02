@@ -1,0 +1,59 @@
+name: Prompt request
+description: Propose a new scenario or a new candidate for an existing one.
+title: "[prompt] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Task
+      description: What writing task should the prompt solve? One sentence.
+      placeholder: "e.g. turn a reviewer's comment into a specific experiment plan"
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: What current prompts get wrong
+      description: Describe an observable failure, not a general preference. If possible, show a short before/after.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Proposed prompt
+      description: Paste the complete prompt. Include the input schema and output contract.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Original URL, or "written for this catalog".
+      placeholder: "https://... or written for this catalog"
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Upstream license
+      description: Name the license, or write "not declared". Do not guess.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal example
+      description: Synthetic input, the current output, and the proposed output. Numbers must match the input.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The prompt has an explicit input schema and output format.
+          required: true
+        - label: The example uses synthetic data and contains no private content.
+          required: true

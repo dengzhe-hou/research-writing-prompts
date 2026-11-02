@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this catalog, cite it using this metadata."
+title: "Research Writing Prompt Collection"
+abstract: "Plain-text prompts for 25 research-writing tasks, with sources, alternatives and a searchable web edition."
+type: software
+authors:
+  - family-names: Hou
+    given-names: Dengzhe
+repository-code: "https://github.com/dengzhe-hou/research-writing-prompts"
+url: "https://dengzhe-hou.github.io/research-writing-prompts/"
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-11-02
+keywords:
+  - academic writing
+  - prompt engineering
+  - research writing
+  - LaTeX
+  - peer review
