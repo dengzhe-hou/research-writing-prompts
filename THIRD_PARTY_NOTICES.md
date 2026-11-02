@@ -23,6 +23,15 @@ upstream projects as of 2026-11-02.
 reproduced here and is not counted as a candidate. Its upstream license is
 CC BY-NC 4.0.
 
+## Site design
+
+The catalog layout and visual tokens are adapted from
+[Look et al.](https://looketal.com), a design reference for academic pages.
+Look et al.'s code is MIT and its `DESIGN.md` text is CC BY-NC 4.0; only the
+catalog layout, colors, type choices and component patterns are reused here.
+The prompts and their licensing are unaffected. The site credits Look et al.
+in its sidebar.
+
 ## If you are an upstream author
 
 If you own one of the unlicensed upstream collections and want an entry removed,

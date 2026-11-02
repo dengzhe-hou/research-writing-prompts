@@ -3,6 +3,15 @@
 All notable changes to this collection are recorded here. The catalog is
 versioned as a whole; individual prompts keep stable numeric IDs.
 
+## Unreleased
+
+### Changed
+
+- Redesigned the static site after the [Look et al.](https://looketal.com)
+  catalog template: cream paper background, Newsreader headings, a sticky
+  category sidebar, grouped scenario cards, light/dark/auto themes, and
+  keyboard shortcuts (`/` to search, `Esc` to clear).
+
 ## v1.0.0 — 2026-11-02
 
 First release with a single source of truth and a verifiable build.
