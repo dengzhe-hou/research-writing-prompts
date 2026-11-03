@@ -13,7 +13,9 @@ versioned as a whole; individual prompts keep stable numeric IDs.
   single-column prompt cards, a scroll-progress bar, and the same search,
   filtering, copy and deep-link behavior. This replaces the interim Look et
   al. catalog skin. The site is intentionally light-only, matching the
-  reference.
+  reference. The type scale is set larger than the reference's zoomed desktop
+  rendering (17px UI text, 18px prose, 29px card titles and 38px section
+  headings) for comfortable reading.
 
 ## v1.0.0 — 2026-11-02
 
