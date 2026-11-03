@@ -26,11 +26,12 @@ CC BY-NC 4.0.
 ## Site design
 
 The catalog layout and visual tokens are adapted from
-[Look et al.](https://looketal.com), a design reference for academic pages.
-Look et al.'s code is MIT and its `DESIGN.md` text is CC BY-NC 4.0; only the
-catalog layout, colors, type choices and component patterns are reused here.
-The prompts and their licensing are unaffected. The site credits Look et al.
-in its sidebar.
+[Look et al.](https://looketal.com), a design reference for academic pages,
+specifically the [Vermilion Editorial Rail](https://looketal.com/s/icml-2026-foca.html)
+reference. Look et al.'s code is MIT and its `DESIGN.md` text is CC BY-NC 4.0;
+only the catalog layout, colors, type choices and component patterns are
+reused here. The prompts and their licensing are unaffected. The site credits
+Look et al. in its footer.
 
 ## If you are an upstream author
 
