@@ -275,6 +275,7 @@ def render_all(data: dict) -> dict[Path, str]:
     tokens = {
         "{{scenario_count}}": str(c["scenarios"]),
         "{{candidate_count}}": str(c["candidates"]),
+        "{{category_count}}": str(len(data["categories"])),
         "{{updated}}": data["updated"],
     }
     files: dict[Path, str] = {}
@@ -305,6 +306,7 @@ def render_all(data: dict) -> dict[Path, str]:
     site = site.replace("{{data_json}}", payload)
     site = site.replace("{{scenario_count}}", str(c["scenarios"]))
     site = site.replace("{{candidate_count}}", str(c["candidates"]))
+    site = site.replace("{{category_count}}", str(len(data["categories"])))
     site = site.replace("{{updated}}", data["updated"])
     files[DOCS / "index.html"] = site
     files[DOCS / "prompts.json"] = json.dumps(site_data, ensure_ascii=False, indent=2) + "\n"

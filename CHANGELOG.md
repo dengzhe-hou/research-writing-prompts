@@ -8,9 +8,12 @@ versioned as a whole; individual prompts keep stable numeric IDs.
 ### Changed
 
 - Redesigned the static site after the [Look et al.](https://looketal.com)
-  catalog template: cream paper background, Newsreader headings, a sticky
-  category sidebar, grouped scenario cards, light/dark/auto themes, and
-  keyboard shortcuts (`/` to search, `Esc` to clear).
+  Vermilion Editorial Rail reference: warm paper and dot grid, a fixed
+  contents rail, Source Serif 4 / Noto Serif SC headings, vermilion accents,
+  single-column prompt cards, a scroll-progress bar, and the same search,
+  filtering, copy and deep-link behavior. This replaces the interim Look et
+  al. catalog skin. The site is intentionally light-only, matching the
+  reference.
 
 ## v1.0.0 — 2026-11-02
 
